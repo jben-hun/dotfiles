@@ -188,9 +188,3 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3status
 }
-
-# hide_edge_borders both
-
-# default_border none
-# default_floating_border none
-# new_window none

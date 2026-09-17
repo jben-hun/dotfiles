@@ -9,6 +9,8 @@ PS1='[\u@\h \W]\$ '
 
 alias tree='tree -C'
 
+export TERMINAL=xfce4-terminal
+
 export HISTCONTROL=ignoredups:erasedups:ignorespace
 shopt -s histappend
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"

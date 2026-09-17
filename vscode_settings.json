@@ -1,0 +1,7 @@
+{
+    "continue.enableTabAutocomplete": true,
+    "continue.enableNextEdit": false,
+    "[csv]": {
+        "editor.inlayHints.maximumLength": 0
+    }
+}

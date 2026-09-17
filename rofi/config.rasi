@@ -1,0 +1,10 @@
+configuration {
+  combi-modes: [window, drun];
+  mode: "combi";
+  show-icons: true;
+  icon-theme: "Qogir-Dark";
+  sorting-method: "fzf";
+  search-method: "fuzzy";
+}
+
+@theme "/usr/share/rofi/themes/solarized_alternate.rasi"

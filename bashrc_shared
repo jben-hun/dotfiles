@@ -1,0 +1,14 @@
+alias ls='ls -h --color=auto'
+alias l=' ls -l'
+alias ll='l -a'
+
+alias grep='grep --color=auto'
+PS1='[\u@\h \W]\$ '
+
+alias tree='tree -C'
+
+export HISTCONTROL=ignoredups:erasedups:ignorespace
+shopt -s histappend
+export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+export HISTSIZE=50000
+export HISTFILESIZE=100000

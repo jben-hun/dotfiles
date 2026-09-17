@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 # bash
-cp ~/.bashrc_shared bashrc_shared
+cp ~/.shared.bashrc shared.bashrc
 
 # xfce
 rm -rf xfce4

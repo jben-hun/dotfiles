@@ -3,7 +3,7 @@
 mkdir -p ~/.config
 
 # bash
-cp bashrc_shared ~/.bashrc_shared
+cp shared.bashrc ~/.shared.bashrc
 
 # xfce
 rm -rf ~/.config/xfce4

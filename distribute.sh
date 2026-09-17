@@ -1,0 +1,23 @@
+#!/usr/bin/env sh
+
+mkdir -p ~/.config
+
+# bash
+cp bashrc_shared ~/.bashrc_shared
+
+# xfce
+rm -rf ~/.config/xfce4
+cp -r xfce4 ~/.config
+
+# i3
+rm -rf ~/.config/i3
+cp -r i3 ~/.config
+
+# rofi
+rm -rf ~/.config/rofi
+cp -r rofi ~/.config
+
+# vscode
+mkdir -p ~/.config/Code/User
+cp vscode_settings.json    ~/.config/Code/User/settings.json
+cp vscode_keybindings.json ~/.config/Code/User/keybindings.json

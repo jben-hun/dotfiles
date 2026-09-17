@@ -1,3 +1,5 @@
+## usage: ~/.bashrc <- [ -f ~/.shared.bashrc ] && source ~/.shared.bashrc
+
 alias ls='ls -h --color=auto'
 alias l=' ls -l'
 alias ll='l -a'

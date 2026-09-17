@@ -1,7 +1,12 @@
 {
-    "continue.enableTabAutocomplete": true,
-    "continue.enableNextEdit": false,
-    "[csv]": {
-        "editor.inlayHints.maximumLength": 0
-    }
+    "workbench.colorTheme": "Solarized Dark",
+    "security.workspace.trust.untrustedFiles": "open",
+    "explorer.confirmDragAndDrop": false,
+    "explorer.confirmDelete": false,
+    "jupyter.askForKernelRestart": false,
+    "terminal.integrated.enableMultiLinePasteWarning": "never",
+    "debug.saveBeforeStart": "none",
+    "python.terminal.activateEnvironment": false,
+    "workbench.browser.openLocalhostLinks": false,
+    "chat.viewSessions.orientation": "stacked"
 }

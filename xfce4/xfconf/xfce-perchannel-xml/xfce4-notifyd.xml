@@ -17,6 +17,7 @@
       <value type="string" value="tidal-hifi"/>
       <value type="string" value="Volume Icon"/>
       <value type="string" value="Xfce volume control"/>
+      <value type="string" value="Xfce volume daemon"/>
       <value type="string" value="Xfce4-notifyd settings"/>
       <value type="string" value="xfce4-power-manager"/>
       <value type="string" value="xfce4-settings-helper"/>
@@ -34,5 +35,9 @@
   <property name="gauge-ignores-dnd" type="bool" value="true"/>
   <property name="do-slideout" type="bool" value="false"/>
   <property name="theme" type="string" value="Default"/>
-  <property name="show-text-with-gauge" type="bool" value="false"/>
+  <property name="show-text-with-gauge" type="bool" value="true"/>
+  <property name="do-not-disturb" type="bool" value="false"/>
+  <property name="expire-timeout" type="int" value="10"/>
+  <property name="do-fadeout" type="bool" value="true"/>
+  <property name="mute-sounds" type="bool" value="false"/>
 </channel>

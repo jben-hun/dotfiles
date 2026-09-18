@@ -41,6 +41,11 @@ font pango:monospace 8
 # bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status && canberra-gtk-play -i audio-volume-change
 # bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status && canberra-gtk-play -i audio-volume-change
 
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@   -10%   && canberra-gtk-play -i audio-volume-change
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@   +10%   && canberra-gtk-play -i audio-volume-change
+bindsym XF86AudioMute exec        --no-startup-id pactl set-sink-mute   @DEFAULT_SINK@   toggle
+bindsym XF86AudioMicMute exec     --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -194,10 +199,18 @@ hide_edge_borders both
 bindsym $mod+Ctrl+Right workspace next
 bindsym $mod+Ctrl+Left workspace prev
 
-exec --no-startup-id xfce4-panel --disable-wm-check
-exec_always --no-startup-id "pgrep xfce4-panel && xfce4-panel -r"
-exec_always --no-startup-id feh --bg-fill --randomize ~/.local/share/backgrounds
+# exec --no-startup-id xfce4-panel --disable-wm-check
+# exec_always --no-startup-id "pgrep xfce4-panel && xfce4-panel -r"
+# exec --no-startup-id xfce4-volumed-pulse
 
-# Enable gaps
-gaps inner 8
-gaps outer -8
+exec_always --no-startup-id feh --auto-zoom --bg-fill --randomize ~/.local/share/backgrounds
+exec_always --no-startup-id "polybar-msg cmd quit; polybar"
+
+# gaps inner 8
+# gaps outer -8
+# gaps bottom 0
+
+default_border pixel 4
+default_floating_border pixel 4
+
+client.focused #008ed4 #008ed4 #ffffff #008ed4 #008ed4

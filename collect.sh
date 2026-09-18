@@ -15,6 +15,10 @@ cp -r ~/.config/i3 .
 rm -rf rofi
 cp -r ~/.config/rofi .
 
+# polybar
+rm -rf polybar
+cp -r ~/.config/polybar .
+
 # vscode
 cp ~/.config/Code/User/settings.json    vscode_settings.json
 cp ~/.config/Code/User/keybindings.json vscode_keybindings.json

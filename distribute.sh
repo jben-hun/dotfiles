@@ -17,6 +17,10 @@ cp -r i3 ~/.config
 rm -rf ~/.config/rofi
 cp -r rofi ~/.config
 
+# polybar
+rm -rf ~/.config/polybar
+cp -r polybar ~/.config
+
 # vscode
 mkdir -p ~/.config/Code/User
 cp vscode_settings.json    ~/.config/Code/User/settings.json

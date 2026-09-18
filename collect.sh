@@ -18,3 +18,7 @@ cp -r ~/.config/rofi .
 # vscode
 cp ~/.config/Code/User/settings.json    vscode_settings.json
 cp ~/.config/Code/User/keybindings.json vscode_keybindings.json
+
+# zed
+rm -rf zed
+cp -r ~/.config/zed .

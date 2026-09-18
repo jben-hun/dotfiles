@@ -1,5 +1,5 @@
 configuration {
-  combi-modes: [window, drun];
+  combi-modes: [window, drun, run];
   mode: "combi";
   show-icons: true;
   icon-theme: "Qogir-Dark";

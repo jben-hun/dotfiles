@@ -16,3 +16,11 @@ shopt -s histappend
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 export HISTSIZE=50000
 export HISTFILESIZE=100000
+
+export GTK_CSD=0
+LIBRARY="/usr/lib/libgtk-nocsd.so"
+if [ -n "${LD_PRELOAD:-}" ]; then
+    export LD_PRELOAD="$LIBRARY:$LD_PRELOAD"
+else
+    export LD_PRELOAD="$LIBRARY"
+fi

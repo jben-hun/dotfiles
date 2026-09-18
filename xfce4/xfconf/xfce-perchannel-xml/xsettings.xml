@@ -3,7 +3,7 @@
 <channel name="xsettings" version="1.0">
   <property name="Net" type="empty">
     <property name="ThemeName" type="string" value="Adwaita-dark"/>
-    <property name="IconThemeName" type="string" value="elementary-xfce-dark"/>
+    <property name="IconThemeName" type="string" value="elementary-xfce"/>
     <property name="DoubleClickTime" type="empty"/>
     <property name="DoubleClickDistance" type="empty"/>
     <property name="DndDragThreshold" type="empty"/>
@@ -30,7 +30,7 @@
     <property name="MenuImages" type="bool" value="true"/>
     <property name="ButtonImages" type="bool" value="true"/>
     <property name="MenuBarAccel" type="empty"/>
-    <property name="CursorThemeName" type="string" value="Qogir-Dark"/>
+    <property name="CursorThemeName" type="string" value="Adwaita"/>
     <property name="CursorThemeSize" type="empty"/>
     <property name="DecorationLayout" type="string" value="icon,menu:maximize,close"/>
     <property name="DialogsUseHeader" type="bool" value="true"/>

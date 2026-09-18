@@ -9,9 +9,10 @@
       <property name="position" type="string" value="p=8;x=960;y=1181"/>
       <property name="length" type="double" value="100"/>
       <property name="position-locked" type="bool" value="true"/>
-      <property name="icon-size" type="uint" value="0"/>
-      <property name="size" type="uint" value="34"/>
+      <property name="icon-size" type="uint" value="25"/>
+      <property name="size" type="uint" value="27"/>
       <property name="plugin-ids" type="array">
+        <value type="int" value="1"/>
         <value type="int" value="3"/>
         <value type="int" value="6"/>
         <value type="int" value="5"/>
@@ -40,6 +41,9 @@
     <property name="plugin-6" type="string" value="systray">
       <property name="square-icons" type="bool" value="true"/>
       <property name="known-legacy-items" type="array">
+        <value type="string" value="notes"/>
+        <value type="string" value="blueman"/>
+        <value type="string" value="wi-fi network connection “vodafone-4caf” active: vodafone-4caf (75%)"/>
         <value type="string" value="wi-fi network connection “vodafone-4caf” active: vodafone-4caf (66%)"/>
         <value type="string" value="wi-fi network connection “vodafone-4caf” active: vodafone-4caf (74%)"/>
         <value type="string" value="wi-fi network connection “vodafone-4caf” active: vodafone-4caf (72%)"/>
@@ -114,9 +118,16 @@
     <property name="plugin-9" type="string" value="power-manager-plugin"/>
     <property name="plugin-10" type="string" value="notification-plugin"/>
     <property name="plugin-12" type="string" value="clock">
-      <property name="mode" type="uint" value="2"/>
+      <property name="mode" type="uint" value="4"/>
       <property name="timezone" type="string" value=""/>
-      <property name="digital-layout" type="uint" value="1"/>
+      <property name="digital-layout" type="uint" value="3"/>
+      <property name="digital-time-format" type="string" value="&lt;b&gt;%T&lt;/b&gt;"/>
+      <property name="show-seconds" type="bool" value="true"/>
+      <property name="show-military" type="bool" value="true"/>
+      <property name="flash-separators" type="bool" value="false"/>
+      <property name="show-meridiem" type="bool" value="false"/>
+      <property name="show-inactive" type="bool" value="true"/>
+      <property name="tooltip-format" type="string" value="%x"/>
     </property>
     <property name="clipman" type="empty">
       <property name="settings" type="empty">
@@ -210,5 +221,11 @@
       <property name="custom-menu" type="bool" value="false"/>
       <property name="button-icon" type="string" value="archlinux-logo"/>
     </property>
+    <property name="notes" type="empty">
+      <property name="global" type="empty">
+        <property name="version" type="string" value="1.12.0"/>
+      </property>
+    </property>
+    <property name="plugin-1" type="string" value="i3-workspaces"/>
   </property>
 </channel>

@@ -1,6 +1,6 @@
 configuration {
   combi-modes: [window, drun, run];
-  mode: "combi";
+  modes: [combi];
   show-icons: true;
   icon-theme: "Qogir-Dark";
   sorting-method: "fzf";

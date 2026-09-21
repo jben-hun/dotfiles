@@ -7,23 +7,31 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "diff_view_style": "split",
+  "languages": {
+    "Markdown": {
+      "show_edit_predictions": false,
+      "format_on_save": "on",
+    },
+  },
   "cli_default_open_behavior": "existing_window",
   "edit_predictions": {
-    "provider": "copilot"
+    "mode": "subtle",
+    "provider": "copilot",
   },
   "collaboration_panel": {
     "button": false,
-    "dock": "left"
+    "dock": "left",
   },
   "agent": {
     "flexible": false,
     "dock": "left",
-    "default_profile": "ask",
+    "default_profile": "write",
     "default_model": {
       "provider": "openai",
       "model": "gpt-5.6-terra",
       "enable_thinking": true,
-      "effort": "medium"
+      "effort": "medium",
     },
     "sidebar_side": "right",
     "favorite_models": [
@@ -31,30 +39,31 @@
         "provider": "openai",
         "model": "gpt-5.6-terra",
         "enable_thinking": true,
-        "effort": "medium"
-      }
+        "effort": "medium",
+      },
     ],
-    "model_parameters": []
+    "model_parameters": [],
   },
   "git_panel": {
-    "dock": "left"
+    "tree_view": false,
+    "dock": "left",
   },
   "project_panel": {
-    "dock": "left"
+    "dock": "left",
   },
   "outline_panel": {
-    "dock": "left"
+    "dock": "left",
   },
   "agent_servers": {
     "github-copilot-cli": {
-      "type": "registry"
-    }
+      "type": "registry",
+    },
   },
   "base_keymap": "Zed",
   "icon_theme": {
     "mode": "system",
     "light": "Zed (Default)",
-    "dark": "Zed (Default)"
+    "dark": "Zed (Default)",
   },
   "ui_font_size": 16,
   "buffer_font_size": 15,
@@ -62,5 +71,10 @@
     "mode": "system",
     "light": "One Light",
     "dark": "One Dark",
+  },
+  "terminal": {
+    "env": {
+      "GIT_EDITOR": "zed --wait"
+    }
   }
 }

@@ -9,10 +9,11 @@ PS1='[\u@\h \W]\$ '
 
 alias tree='tree -C'
 
-alias zed='zeditor'
+alias zed='/usr/bin/zeditor'
 
 export TERMINAL=xfce4-terminal
 export EDITOR=nano
+export VISUAL=nano
 
 export HISTCONTROL=ignoredups:erasedups:ignorespace
 shopt -s histappend

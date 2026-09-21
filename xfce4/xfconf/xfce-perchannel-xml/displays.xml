@@ -28,4 +28,27 @@
       </property>
     </property>
   </property>
+  <property name="d1171489-cabe-4414-9f43-7a2f0a3a0caf" type="string" value="default">
+    <property name="eDP" type="string" value="Laptop">
+      <property name="Active" type="bool" value="false"/>
+      <property name="EDID" type="string" value="0a36443f40b790c712eca51fd22b2fa3baf800df"/>
+      <property name="DuplicateEDID" type="bool" value="false"/>
+    </property>
+    <property name="HDMI-A-0" type="string" value="Dell Inc. 24&quot;">
+      <property name="Active" type="bool" value="true"/>
+      <property name="EDID" type="string" value="8339aa24448089649d5071f239a6b3810720f246"/>
+      <property name="DuplicateEDID" type="bool" value="false"/>
+      <property name="Resolution" type="string" value="1920x1200"/>
+      <property name="RefreshRate" type="double" value="59.950171286203677"/>
+      <property name="ModeFlags" type="uint64" value="9"/>
+      <property name="Rotation" type="int" value="0"/>
+      <property name="Reflection" type="string" value="0"/>
+      <property name="Primary" type="bool" value="true"/>
+      <property name="Scale" type="double" value="1"/>
+      <property name="Position" type="empty">
+        <property name="X" type="int" value="0"/>
+        <property name="Y" type="int" value="0"/>
+      </property>
+    </property>
+  </property>
 </channel>

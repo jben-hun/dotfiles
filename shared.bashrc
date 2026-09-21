@@ -9,8 +9,6 @@ PS1='[\u@\h \W]\$ '
 
 alias tree='tree -C'
 
-alias zed='/usr/bin/zeditor'
-
 export TERMINAL=xfce4-terminal
 export EDITOR=nano
 export VISUAL=nano

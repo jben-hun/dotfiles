@@ -206,7 +206,7 @@ hide_edge_borders both
 # exec --no-startup-id xfce4-volumed-pulse
 
 exec_always --no-startup-id feh --auto-zoom --bg-fill --randomize ~/.local/share/backgrounds
-exec_always --no-startup-id "polybar-msg cmd quit; polybar"
+# exec_always --no-startup-id "polybar-msg cmd quit; polybar"
 
 # gaps inner 8
 # gaps outer -8

@@ -6,6 +6,7 @@ cp ~/.shared.bashrc shared.bashrc
 # lxqt
 rm -rf lxqt
 cp -r ~/.config/lxqt .
+rm lxqt/lxqt-config-monitor.conf
 
 # xfce
 rm -rf xfce4

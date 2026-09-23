@@ -26,7 +26,7 @@
   "agent": {
     "flexible": false,
     "dock": "left",
-    "default_profile": "write",
+    "default_profile": "minimal",
     "default_model": {
       "provider": "openai",
       "model": "gpt-5.6-terra",

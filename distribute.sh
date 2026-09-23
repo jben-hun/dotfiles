@@ -5,6 +5,10 @@ mkdir -p ~/.config
 # bash
 cp shared.bashrc ~/.shared.bashrc
 
+# lxqt
+rm -rf ~/.config/lxqt
+cp -r lxqt ~/.config
+
 # xfce
 rm -rf ~/.config/xfce4
 cp -r xfce4 ~/.config

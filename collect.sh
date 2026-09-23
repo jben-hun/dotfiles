@@ -3,6 +3,10 @@
 # bash
 cp ~/.shared.bashrc shared.bashrc
 
+# lxqt
+rm -rf lxqt
+cp -r ~/.config/lxqt .
+
 # xfce
 rm -rf xfce4
 cp -r ~/.config/xfce4 .

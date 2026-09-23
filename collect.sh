@@ -20,6 +20,18 @@ cp -r ~/.config/i3 .
 rm -rf rofi
 cp -r ~/.config/rofi .
 
+# fuzzel
+rm -rf fuzzel
+cp -r ~/.config/fuzzel .
+
+# waybar
+rm -rf waybar
+cp -r ~/.config/waybar .
+
+# niri
+rm -rf niri
+cp -r ~/.config/niri .
+
 # polybar
 rm -rf polybar
 cp -r ~/.config/polybar .

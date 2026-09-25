@@ -51,3 +51,6 @@ cp -r ~/.config/foot .
 # zed
 rm -rf zed
 cp -r ~/.config/zed .
+
+# portals
+cp ~/.config/xdg-desktop-portal/sway-portals.conf sway-portals.conf

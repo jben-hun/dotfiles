@@ -53,3 +53,7 @@ cp -r foot ~/.config
 # zed
 rm -rf ~/.config/zed
 cp -r zed ~/.config
+
+# portals
+mkdir -p ~/.config/xdg-desktop-portal
+cp sway-portals.conf ~/.config/xdg-desktop-portal

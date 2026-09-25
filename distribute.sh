@@ -18,8 +18,8 @@ cp shared.bashrc ~/.shared.bashrc
 # cp -r i3 ~/.config
 
 # sway
-# rm -rf ~/.config/sway
-# cp -r sway ~/.config
+rm -rf ~/.config/sway
+cp -r sway ~/.config
 
 # rofi
 # rm -rf ~/.config/rofi

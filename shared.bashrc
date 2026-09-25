@@ -19,6 +19,8 @@ export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 export HISTSIZE=50000
 export HISTFILESIZE=100000
 
+export QT_QPA_PLATFORMTHEME=qt5ct
+
 export GTK_CSD=0
 # xfconf-query -c xsettings -p /Gtk/DialogsUseHeader -s false
 # xfconf-query -c xsettings -p /Gtk/DecorationLayout -r

@@ -16,7 +16,7 @@
   "sway/window": {},
 
   "tray": {
-    "icon-size": 22,
+    "icon-size": 24,
     "show-passive-items": true,
   },
 
@@ -53,8 +53,8 @@
       "weeks-pos": "left",
       "first-day-of-week": 1,
       "format": {
-        "days": "<span color='#285577'>{}</span>",
-        "today": "<span color='#ffffff'><b>{}</b></span>",
+        "days": "<span color='#ffffff'>{}</span>",
+        "today": "<span color='#900000'><b><i>{}</i></b></span>",
       },
     },
   },

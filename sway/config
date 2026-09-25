@@ -248,7 +248,7 @@ input * {
 }
 
 output eDP-1 disable
-output * allow_tearing yes
+# output * allow_tearing yes
 output * max_render_time off
 output * bg ~/.local/share/backgrounds/background fill
 
@@ -264,6 +264,7 @@ exec dbus-update-activation-environment --all
 exec gnome-keyring-daemon --start --components=secrets
 # exec /usr/lib/polkit-kde-authentication-agent-1
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
 
 set $menu fuzzel
 # set $term alacritty

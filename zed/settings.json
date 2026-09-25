@@ -56,6 +56,9 @@
   },
   "agent_servers": {
     "github-copilot-cli": {
+      "default_config_options": {
+        "mode": "https://agentclientprotocol.com/protocol/session-modes#agent"
+      },
       "type": "registry",
     },
   },
@@ -74,7 +77,7 @@
   },
   "terminal": {
     "env": {
-      "GIT_EDITOR": "zed --wait"
+      "GIT_EDITOR": "zeditor --wait"
     }
   }
 }

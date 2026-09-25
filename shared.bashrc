@@ -9,13 +9,13 @@ PS1='[\u@\h \W]\$ '
 
 alias tree='tree -C'
 
-export TERMINAL=alacritty
+export TERMINAL=foot
 export EDITOR=nano
 export VISUAL=nano
 
 export HISTCONTROL=ignoredups:erasedups:ignorespace
 shopt -s histappend
-export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+# export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 export HISTSIZE=50000
 export HISTFILESIZE=100000
 

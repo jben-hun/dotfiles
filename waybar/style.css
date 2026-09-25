@@ -5,16 +5,18 @@ window#waybar {
     font-size: 16px;
 }
 
-#tray, #pulseaudio, #clock, #battery {
+#tray, #battery, #pulseaudio, #pulseaudio, #custom-timebox, #clock {
     padding-left: 16px;
 }
 
+#clock {
+    padding-right: 8px;
+}
+
 #workspaces button {
-    color: #5c5c5c;
     border: none;
     padding: 0 8px;
     border-radius: 0;
-    /*background-color: transparent;*/
 }
 
 #workspaces button.focused {
@@ -30,8 +32,4 @@ window#waybar {
 #workspaces button:hover {
     color: #285577;
     background-color: #ffffff;
-    /*background: none;*/
-    /*border: none;*/
-    /*box-shadow: inherit;*/
-    /*text-shadow: inherit;*/
 }

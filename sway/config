@@ -33,9 +33,9 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 #
 # Example configuration:
 #
-# exec swayidle -w \\
-#          timeout 300 'swaylock -f -c 000000' \\
-#          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \\
+# exec swayidle -w \
+#          timeout 300 'swaylock -f -c 000000' \
+#          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
 #          before-sleep 'swaylock -f -c 000000'
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
@@ -201,10 +201,10 @@ bindsym $mod+r mode "resize"
 # Utilities:
 #
     # Special keys to adjust volume via PulseAudio
-    bindsym --locked XF86AudioMute exec wpctl set-mute \\@DEFAULT_SINK@ toggle && canberra-gtk-play -i audio-volume-change
-    bindsym --locked XF86AudioLowerVolume exec wpctl set-volume \\@DEFAULT_SINK@ 5%- && canberra-gtk-play -i audio-volume-change
-    bindsym --locked XF86AudioRaiseVolume exec wpctl set-volume \\@DEFAULT_SINK@ 5%+ --limit 1.0 && canberra-gtk-play -i audio-volume-change
-    bindsym --locked XF86AudioMicMute exec wpctl set-mute \\@DEFAULT_SOURCE@ toggle && canberra-gtk-play -i audio-volume-change
+    bindsym --locked XF86AudioMute exec wpctl set-mute @DEFAULT_SINK@ toggle && canberra-gtk-play -i audio-volume-change
+    bindsym --locked XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_SINK@ 5%- && canberra-gtk-play -i audio-volume-change
+    bindsym --locked XF86AudioRaiseVolume exec wpctl set-volume @DEFAULT_SINK@ 5%+ --limit 1.0 && canberra-gtk-play -i audio-volume-change
+    bindsym --locked XF86AudioMicMute exec wpctl set-mute @DEFAULT_SOURCE@ toggle && canberra-gtk-play -i audio-volume-change
 
     # Special keys to control media via playerctl
     bindsym --locked XF86AudioPlay exec playerctl play-pause
@@ -218,7 +218,7 @@ bindsym $mod+r mode "resize"
     bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
 
     # Special key to take a screenshot with grim
-    bindsym Print exec grim
+    # bindsym Print exec grim
 
 #
 # Status Bar:
@@ -248,13 +248,15 @@ input * {
 }
 
 output eDP-1 disable
-output * allow_tearing yes
+# output * allow_tearing yes
 output * max_render_time off
 output * bg ~/.local/share/backgrounds/background fill
 
-exec swayidle -w \\
-         timeout 900 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \\
-         before-sleep 'playerctl pause'
+exec swayidle -w \
+    timeout 20 'swaymsg "output * power off"' \
+    resume 'swaymsg "output * power on"' \
+    before-sleep 'playerctl pause'
+
 exec nm-applet --indicator
 exec firewall-applet
 exec deluge-gtk
@@ -264,25 +266,42 @@ exec dbus-update-activation-environment --all
 exec gnome-keyring-daemon --start --components=secrets
 # exec /usr/lib/polkit-kde-authentication-agent-1
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
 
 set $menu fuzzel
 # set $term alacritty
 
-# default_border normal 0
-# default_floating_border normal 0
-smart_borders on
-smart_gaps on
+default_border normal 4
+default_floating_border normal 4
+# for_window [tiling] border pixel 8
+# for_window [floating] border normal 8
+# smart_borders on
+# smart_gaps on
 hide_edge_borders both
 # workspace_auto_back_and_forth yes
 focus_wrapping no
 
-bindsym $mod+Print exec grim -g "$(slurp)"
+for_window [app_id="brave"] border none
+for_window [app_id="edge"] border none
+for_window [app_id="firefox"] border none
+for_window [app_id="zed"] border none
+
+bindsym $mod+Print exec grimshot savecopy screen
+bindsym $mod+Shift+Print exec grimshot savecopy anything
 bindsym $mod+p exec thunar
-bindsym $mod+Shift+e exec swaynag -t warning \
+bindsym $mod+Shift+e exec swaynag \
+    --background 323232 \
+    --button-background 285577 \
+    --text ffffff \
+    --button-text ffffff \
+    --border 4C7899 \
+    --border-bottom 4C7899 \
+    --details-background 323232 \
     -m 'logout...' \
-    -B 'exit' 'swaymsg exit' \
-    -B 'poweroff' 'systemctl poweroff' \
-    -B 'reboot' 'systemctl reboot' \
-    -B 'suspend' 'systemctl suspend' \
-    -B 'hibernate' 'systemctl hibernate' \
-    -B 'hybrid-sleep' 'systemctl hybrid-sleep'
+    -Z 'lock' 'swaylock -f -c 000000' \
+    -Z 'exit' 'swaymsg exit' \
+    -Z 'poweroff' 'systemctl poweroff' \
+    -Z 'reboot' 'systemctl reboot' \
+    -Z 'suspend' 'systemctl suspend' \
+    -Z 'hibernate' 'systemctl hibernate' \
+    -Z 'hybrid-sleep' 'systemctl hybrid-sleep'

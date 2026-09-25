@@ -4,7 +4,7 @@
   "height": 24,
   "modules-left": ["sway/workspaces", "sway/mode"],
   "modules-center": ["sway/window"],
-  "modules-right": ["tray", "battery", "pulseaudio", "clock"],
+  "modules-right": ["tray", "battery", "pulseaudio", "custom/timebox", "clock"],
 
   "sway/workspaces": {
     "enable-bar-scroll": true,
@@ -13,7 +13,12 @@
 
   "sway/mode": {},
 
-  "sway/window": {},
+  "sway/window": {
+    "format": "{app_id}: {title} ({shell})",
+    "rewrite": {
+      "^:  \\(\\)$": "",
+    },
+  },
 
   "tray": {
     "icon-size": 24,
@@ -37,25 +42,34 @@
     "format": "vol:{volume:3}%",
     "format-muted": "vol:---%",
     "on-click-middle": "pavucontrol",
-    "on-click": "wpctl set-mute \\@DEFAULT_SINK@ toggle && canberra-gtk-play -i audio-volume-change",
-    "on-scroll-down": "wpctl set-volume \\@DEFAULT_SINK@ 5%- && canberra-gtk-play -i audio-volume-change",
-    "on-scroll-up": "wpctl set-volume \\@DEFAULT_SINK@ 5%+ --limit 1.0 && canberra-gtk-play -i audio-volume-change",
-    "on-click-right": "wpctl set-mute \\@DEFAULT_SOURCE@ toggle && canberra-gtk-play -i audio-volume-change",
+    "on-click": "wpctl set-mute @DEFAULT_SINK@ toggle && canberra-gtk-play -i audio-volume-change",
+    "on-scroll-down": "wpctl set-volume @DEFAULT_SINK@ 5%- && canberra-gtk-play -i audio-volume-change",
+    "on-scroll-up": "wpctl set-volume @DEFAULT_SINK@ 5%+ --limit 1.0 && canberra-gtk-play -i audio-volume-change",
+    "on-click-right": "wpctl set-mute @DEFAULT_SOURCE@ toggle && canberra-gtk-play -i audio-volume-change",
+  },
+
+  "custom/timebox": {
+    "exec": "$($HOME/bin/timebox.sh --check) && echo ' on' || echo 'off'",
+    "on-click": "$HOME/bin/timebox.sh --toggle &",
+    "format": "box:{text}",
+    "tooltip": false,
+    "signal": 1,
   },
 
   "clock": {
-    "format": "{:%Y-%m-%d %H:%M:%S} ",
-    "tooltip-format": "<tt>{calendar}</tt>",
     "interval": 1,
-    "calendar": {
-      "mode": "year",
-      "mode-mon-col": 3,
-      "weeks-pos": "left",
-      "first-day-of-week": 1,
-      "format": {
-        "days": "<span color='#ffffff'>{}</span>",
-        "today": "<span color='#900000'><b><i>{}</i></b></span>",
-      },
-    },
+    "format": "{:%Y-%m-%d %H:%M:%S}",
+    "tooltip": false,
+    // "tooltip-format": "<tt>{calendar}</tt>",
+    // "calendar": {
+    //   "mode": "year",
+    //   "mode-mon-col": 3,
+    //   "weeks-pos": "left",
+    //   "first-day-of-week": 1,
+    //   "format": {
+    //     "days": "<span color='#ffffff'>{}</span>",
+    //     "today": "<span color='#900000'><b><i>{}</i></b></span>",
+    //   },
+    // },
   },
 }

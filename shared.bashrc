@@ -9,7 +9,7 @@ PS1='[\u@\h \W]\$ '
 
 alias tree='tree -C'
 
-export TERMINAL=xfce4-terminal
+export TERMINAL=alacritty
 export EDITOR=nano
 export VISUAL=nano
 
@@ -19,9 +19,9 @@ export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 export HISTSIZE=50000
 export HISTFILESIZE=100000
 
+export GTK_CSD=0
 # xfconf-query -c xsettings -p /Gtk/DialogsUseHeader -s false
 # xfconf-query -c xsettings -p /Gtk/DecorationLayout -r
-# export GTK_CSD=0
 # LIBRARY="/usr/lib/libgtk-nocsd.so"
 # if [ -f "$LIBRARY" ]; then
 #     if [ -n "${LD_PRELOAD:-}" ]; then

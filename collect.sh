@@ -44,6 +44,10 @@ cp -r ~/.config/waybar .
 rm -rf foot
 cp -r ~/.config/foot .
 
+# swappy
+rm -rf swappy
+cp -r ~/.config/swappy .
+
 # vscode
 # cp ~/.config/Code/User/settings.json    vscode_settings.json
 # cp ~/.config/Code/User/keybindings.json vscode_keybindings.json

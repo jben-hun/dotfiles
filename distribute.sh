@@ -45,6 +45,10 @@ cp -r waybar ~/.config
 rm -rf ~/.config/foot
 cp -r foot ~/.config
 
+# swappy
+rm -rf ~/.config/swappy
+cp -r swappy ~/.config
+
 # vscode
 # mkdir -p ~/.config/Code/User
 # cp vscode_settings.json    ~/.config/Code/User/settings.json

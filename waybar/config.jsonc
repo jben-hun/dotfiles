@@ -49,9 +49,9 @@
   },
 
   "custom/timebox": {
-    "exec": "$($HOME/bin/timebox.sh --check) && echo ' on' || echo 'off'",
+    "exec": "echo $($HOME/bin/timebox.sh --check)",
     "on-click": "$HOME/bin/timebox.sh --toggle &",
-    "format": "box:{text}",
+    "format": "box:{text:>2}",
     "tooltip": false,
     "signal": 1,
   },

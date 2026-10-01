@@ -253,10 +253,9 @@ output * max_render_time off
 output * bg ~/.local/share/backgrounds/background fill
 
 exec swayidle -w \
-    timeout 20 'swaymsg "output * power off"' \
+    timeout 900 'swaymsg "output * power off"' \
     resume 'swaymsg "output * power on"' \
     before-sleep 'playerctl pause'
-
 exec nm-applet --indicator
 exec firewall-applet
 exec deluge-gtk
@@ -267,12 +266,17 @@ exec gnome-keyring-daemon --start --components=secrets
 # exec /usr/lib/polkit-kde-authentication-agent-1
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
+exec cliphist wipe
+exec wl-paste --watch cliphist store
 
 set $menu fuzzel
 # set $term alacritty
 
-default_border normal 4
+seat * xcursor_theme Bibata-Original-Classic 25
+
+default_border pixel 4
 default_floating_border normal 4
+# workspace_layout stacking
 # for_window [tiling] border pixel 8
 # for_window [floating] border normal 8
 # smart_borders on
@@ -281,27 +285,28 @@ hide_edge_borders both
 # workspace_auto_back_and_forth yes
 focus_wrapping no
 
-for_window [app_id="brave"] border none
-for_window [app_id="edge"] border none
-for_window [app_id="firefox"] border none
-for_window [app_id="zed"] border none
+# for_window [app_id="brave"] border none
+# for_window [app_id="edge"] border none
+# for_window [app_id="firefox"] border none
+# for_window [app_id="zed"] border none
 
-bindsym $mod+Print exec grimshot savecopy screen
-bindsym $mod+Shift+Print exec grimshot savecopy anything
-bindsym $mod+p exec thunar
+bindsym $mod+Print exec grim - | wl-copy && grim "$HOME/Pictures/Screenshots/grimslurp-$(date +%Y-%m-%dT%H-%M-%S-%s).png"
+bindsym $mod+Shift+Print exec grim -g "$(slurp)" - | swappy -f -
+bindsym $mod+Shift+D exec cliphist list | fuzzel --dmenu | cliphist decode | wl-copy
+bindsym $mod+Shift+Return exec thunar
 bindsym $mod+Shift+e exec swaynag \
     --background 323232 \
     --button-background 285577 \
     --text ffffff \
     --button-text ffffff \
     --border 4C7899 \
-    --border-bottom 4C7899 \
+    --border-bottom 285577 \
     --details-background 323232 \
     -m 'logout...' \
-    -Z 'lock' 'swaylock -f -c 000000' \
     -Z 'exit' 'swaymsg exit' \
-    -Z 'poweroff' 'systemctl poweroff' \
+    -Z 'lock' 'swaylock -f -c 000000' \
     -Z 'reboot' 'systemctl reboot' \
-    -Z 'suspend' 'systemctl suspend' \
+    -Z 'poweroff' 'systemctl poweroff' \
     -Z 'hibernate' 'systemctl hibernate' \
-    -Z 'hybrid-sleep' 'systemctl hybrid-sleep'
+    -Z 'hybrid-sleep' 'systemctl hybrid-sleep' \
+    -Z 'suspend' 'systemctl suspend'

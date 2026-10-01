@@ -1,5 +1,8 @@
 ## usage: ~/.bashrc <- [ -f ~/.shared.bashrc ] && source ~/.shared.bashrc
 
+eval "$(zoxide init bash)"
+eval "$(starship init bash)"
+
 alias ls='ls -h --color=auto'
 alias l=' ls -l'
 alias ll='l -a'
@@ -19,9 +22,7 @@ shopt -s histappend
 export HISTSIZE=50000
 export HISTFILESIZE=100000
 
-export QT_QPA_PLATFORMTHEME=qt5ct
-
-export GTK_CSD=0
+# export GTK_CSD=0
 # xfconf-query -c xsettings -p /Gtk/DialogsUseHeader -s false
 # xfconf-query -c xsettings -p /Gtk/DecorationLayout -r
 # LIBRARY="/usr/lib/libgtk-nocsd.so"

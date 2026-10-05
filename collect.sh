@@ -9,8 +9,12 @@ cp ~/.shared.bashrc shared.bashrc
 # rm lxqt/lxqt-config-monitor.conf
 
 # xfce
-# rm -rf xfce4
-# cp -r ~/.config/xfce4 .
+rm -rf xfce4
+cp -r ~/.config/xfce4 .
+
+# thunar
+rm -rf Thunar
+cp -r ~/.config/Thunar .
 
 # i3
 # rm -rf i3

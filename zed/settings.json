@@ -7,6 +7,7 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "buffer_font_family": "Lilex Nerd Font",
   "diff_view_style": "split",
   "languages": {
     "Markdown": {
@@ -24,6 +25,13 @@
     "dock": "left",
   },
   "agent": {
+    "sandbox_permissions": {
+      "allow_all_hosts": true,
+      "network_hosts": [
+        "pubmed.ncbi.nlm.nih.gov",
+        "www.strongerbyscience.com"
+      ]
+    },
     "tool_permissions": {
       "tools": {
         "search_web": {
@@ -80,7 +88,7 @@
     "dark": "Zed (Default)",
   },
   "ui_font_size": 16,
-  "buffer_font_size": 15,
+  "buffer_font_size": 14.0,
   "theme": {
     "mode": "dark",
     "light": "One Dark",
@@ -88,7 +96,7 @@
   },
   "terminal": {
     "env": {
-      "GIT_EDITOR": "zeditor --wait"
+      "GIT_EDITOR": "zed --wait"
     }
   }
 }

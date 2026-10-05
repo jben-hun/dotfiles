@@ -7,16 +7,16 @@
   <property name="last-window-maximized" type="bool" value="false"/>
   <property name="last-separator-position" type="int" value="169"/>
   <property name="last-location-bar" type="string" value="ThunarLocationButtons"/>
-  <property name="last-side-pane" type="string" value="THUNAR_SIDEPANE_TYPE_SHORTCUTS"/>
+  <property name="last-side-pane" type="string" value="THUNAR_SIDEPANE_TYPE_HIDDEN_SHORTCUTS"/>
   <property name="last-image-preview-visible" type="bool" value="false"/>
   <property name="last-details-view-zoom-level" type="string" value="THUNAR_ZOOM_LEVEL_25_PERCENT"/>
-  <property name="last-details-view-column-widths" type="string" value="50,50,154,154,86,87,50,50,831,50,50,67,50,698"/>
+  <property name="last-details-view-column-widths" type="string" value="50,50,139,154,86,87,50,50,1493,50,50,71,50,217"/>
   <property name="last-splitview-separator-position" type="int" value="-1"/>
   <property name="last-window-width" type="int" value="1920"/>
-  <property name="last-window-height" type="int" value="267"/>
+  <property name="last-window-height" type="int" value="1122"/>
   <property name="misc-single-click" type="bool" value="false"/>
-  <property name="last-sort-column" type="string" value="THUNAR_COLUMN_NAME"/>
-  <property name="last-sort-order" type="string" value="GTK_SORT_ASCENDING"/>
+  <property name="last-sort-column" type="string" value="THUNAR_COLUMN_DATE_MODIFIED"/>
+  <property name="last-sort-order" type="string" value="GTK_SORT_DESCENDING"/>
   <property name="misc-middle-click-in-tab" type="bool" value="true"/>
   <property name="misc-full-path-in-tab-title" type="bool" value="true"/>
   <property name="shortcuts-icon-emblems" type="bool" value="true"/>
@@ -25,8 +25,9 @@
   <property name="misc-text-beside-icons" type="bool" value="false"/>
   <property name="misc-use-csd" type="bool" value="false"/>
   <property name="misc-file-size-binary" type="bool" value="true"/>
-  <property name="misc-date-style" type="string" value="THUNAR_DATE_STYLE_SHORT"/>
+  <property name="misc-date-style" type="string" value="THUNAR_DATE_STYLE_YYYYMMDD"/>
   <property name="tree-icon-emblems" type="bool" value="true"/>
-  <property name="last-toolbar-items" type="string" value="menu:0,back:1,forward:1,open-parent:1,open-home:1,new-tab:0,new-window:0,toggle-split-view:0,undo:0,redo:0,zoom-out:0,zoom-in:0,zoom-reset:0,view-as-icons:0,view-as-detailed-list:0,view-as-compact-list:0,view-switcher:0,location-bar:1,reload:0,search:1,uca-action-1756405655447890-1:0"/>
+  <property name="last-toolbar-items" type="string" value="menu:0,back:1,forward:1,open-parent:1,open-home:1,new-tab:0,new-window:0,toggle-split-view:0,undo:0,redo:0,zoom-out:0,zoom-in:0,zoom-reset:0,view-as-icons:0,view-as-detailed-list:0,view-as-compact-list:0,view-switcher:0,location-bar:1,reload:0,search:1,uca-action-1756405655447890-1:0,uca-action-1791058334983239-1:0"/>
   <property name="misc-expandable-folders" type="bool" value="true"/>
+  <property name="last-details-view-column-order" type="string" value="THUNAR_COLUMN_NAME,THUNAR_COLUMN_SIZE,THUNAR_COLUMN_SIZE_IN_BYTES,THUNAR_COLUMN_DATE_MODIFIED,THUNAR_COLUMN_TYPE,THUNAR_COLUMN_LOCATION,THUNAR_COLUMN_GROUP,THUNAR_COLUMN_MIME_TYPE,THUNAR_COLUMN_DATE_CREATED,THUNAR_COLUMN_OWNER,THUNAR_COLUMN_PERMISSIONS,THUNAR_COLUMN_DATE_ACCESSED,THUNAR_COLUMN_RECENCY,THUNAR_COLUMN_DATE_DELETED"/>
 </channel>

@@ -11,6 +11,8 @@ alias grep='grep --color=auto'
 PS1='[\u@\h \W]\$ '
 
 alias tree='tree -C'
+alias t='tree'
+alias tt='tree -a'
 
 export TERMINAL=foot
 export EDITOR=nano

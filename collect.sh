@@ -24,6 +24,10 @@ cp -r ~/.config/Thunar .
 rm -rf sway
 cp -r ~/.config/sway .
 
+# kanshi
+rm -rf kanshi
+cp -r ~/.config/kanshi .
+
 # rofi
 # rm -rf rofi
 # cp -r ~/.config/rofi .

@@ -10,12 +10,12 @@ cp shared.bashrc ~/.shared.bashrc
 # cp -r lxqt ~/.config
 
 # xfce
-rm -rf ~/.config/xfce4
-cp -r xfce4 ~/.config
+# rm -rf ~/.config/xfce4
+# cp -r xfce4 ~/.config
 
 # thunar
-rm -rf ~/.config/Thunar
-cp -r Thunar ~/.config
+# rm -rf ~/.config/Thunar
+# cp -r Thunar ~/.config
 
 # i3
 # rm -rf ~/.config/i3

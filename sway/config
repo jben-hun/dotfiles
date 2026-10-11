@@ -214,8 +214,8 @@ bindsym $mod+r mode "resize"
     bindsym --locked XF86AudioStop exec playerctl stop
 
     # Special keys to adjust brightness via brightnessctl
-    bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
-    bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
+    bindsym --locked XF86MonBrightnessDown exec brightnessctl set 10%-
+    bindsym --locked XF86MonBrightnessUp exec brightnessctl set 10%+
 
     # Special key to take a screenshot with grim
     # bindsym Print exec grim
@@ -262,6 +262,7 @@ exec deluge-gtk
 exec blueman-applet
 exec wlsunset -S 8:00 -s 22:00 -t 2500 -T 6500
 exec dbus-update-activation-environment --all
+exec systemctl --user import-environment
 exec gnome-keyring-daemon --start --components=secrets
 # exec /usr/lib/polkit-kde-authentication-agent-1
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
@@ -270,6 +271,7 @@ exec cliphist wipe
 exec wl-paste --watch cliphist store
 exec kanshi
 exec_always kanshictl reload
+exec udiskie --tray
 
 set $menu fuzzel
 # set $term alacritty
@@ -295,7 +297,7 @@ focus_wrapping no
 bindsym $mod+Print exec grim - | wl-copy && grim "$HOME/Pictures/Screenshots/grimslurp-$(date +%Y-%m-%dT%H-%M-%S-%s).png"
 bindsym $mod+Shift+Print exec grim -g "$(slurp)" - | swappy -f -
 bindsym $mod+Shift+D exec cliphist list | fuzzel --dmenu | cliphist decode | wl-copy
-bindsym $mod+Shift+Return exec thunar
+# bindsym $mod+Shift+Return exec thunar
 bindsym $mod+Shift+e exec swaynag \
     --font 'Lilex Nerd Font 11' \
     --background 323232 \

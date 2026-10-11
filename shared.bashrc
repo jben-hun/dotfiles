@@ -14,6 +14,9 @@ alias tree='tree -C'
 alias t='tree'
 alias tt='tree -a'
 
+alias mc='MC_SKIN=modarin256-defbg . /usr/lib/mc/mc-wrapper.sh'
+alias sudomc='sudo -E bash -c "MC_SKIN=modarin256root-defbg . /usr/lib/mc/mc-wrapper.sh"'
+
 export TERMINAL=foot
 export EDITOR=nano
 export VISUAL=nano

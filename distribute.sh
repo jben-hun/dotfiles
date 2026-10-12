@@ -69,3 +69,7 @@ cp -r zed ~/.config
 # portals
 mkdir -p ~/.config/xdg-desktop-portal
 cp sway-portals.conf ~/.config/xdg-desktop-portal
+
+# qt
+mkdir -p ~/.config/environment.d
+cp 10-qt.conf ~/.config/environment.d

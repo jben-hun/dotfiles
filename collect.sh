@@ -66,3 +66,6 @@ cp -r ~/.config/zed .
 
 # portals
 cp ~/.config/xdg-desktop-portal/sway-portals.conf sway-portals.conf
+
+# qt
+cp ~/.config/environment.d/10-qt.conf .

@@ -1,7 +1,66 @@
 ## usage: ~/.bashrc <- [ -f ~/.shared.bashrc ] && source ~/.shared.bashrc
 
+# (unset BROWSER && xdg-settings set default-web-browser firefox.desktop)
+# xdg-mime default firefox.desktop x-scheme-handler/http x-scheme-handler/https text/html
+# xdg-mime default pcmanfm.desktop inode/directory
+# xdg-mime default imv-dir.desktop image/jpeg image/png image/gif image/svg+xml image/webp image/bmp image/tiff
+# xdg-mime default celluloid.desktop video/mp4 video/x-matroska video/webm video/quicktime video/x-flv video/3gpp audio/mpeg audio/ogg audio/mp4 audio/x-wav
+# xdg-mime default zed.desktop text/plain text/markdown text/x-python text/x-shellscript text/javascript text/css application/json application/xml
+
 eval "$(zoxide init bash)"
 eval "$(starship init bash)"
+# eval "$(fzf --bash)"
+[ -f /usr/share/fzf/key-bindings.bash ] && source /usr/share/fzf/key-bindings.bash
+[ -f /usr/share/fzf/completion.bash ] && source /usr/share/fzf/completion.bash
+
+c() {
+    if command -v ncal >/dev/null 2>&1; then
+        command ncal -b -M "$@"
+    else
+        command cal -m "$@"
+    fi
+}
+
+adhd() {
+    local log="$HOME/dhda.csv"
+    local timestamp intent exit_point
+
+    printf '\n'
+
+    [[ -f $log ]] && tail -n 6 -- "$log" | awk -F '","' '
+        NR == 1 { next }
+
+        {
+            sub(/^"/, "", $1)
+            sub(/"$/, "", $3)
+
+            for (i = 1; i <= 3; i++) {
+                gsub(/""/, "\"", $i)
+            }
+
+            printf "%s: %s, %s\n", $1, $2, $3
+        }
+    '
+
+    printf '\n'
+
+    LC_TIME=C c
+
+    timestamp=$(LC_TIME=C date '+%Y-%m-%d %a %H:%M:%S')
+    printf '\n%s\n\n' "$timestamp"
+
+    read -r -e -p "Intent: " intent || return
+    read -r -e -p "Exit: " exit_point || return
+
+    intent=${intent//\"/\"\"}
+    exit_point=${exit_point//\"/\"\"}
+
+    {
+        [[ -s $log ]] || printf 'timestamp,intent,exit\n'
+        printf '"%s","%s","%s"\n' \
+            "$timestamp" "$intent" "$exit_point"
+    } >> "$log"
+}
 
 alias ls='ls -h --color=auto'
 alias l=' ls -l'

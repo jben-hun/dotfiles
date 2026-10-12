@@ -48,18 +48,19 @@
     "on-click-right": "wpctl set-mute @DEFAULT_SOURCE@ toggle && canberra-gtk-play -i audio-volume-change",
   },
 
-  "custom/timebox": {
-    "exec": "echo $($HOME/bin/timebox.sh --check)",
-    "on-click": "$HOME/bin/timebox.sh --toggle &",
-    "format": "box:{text:>2}",
-    "tooltip": false,
-    "signal": 1,
-  },
+  // "custom/timebox": {
+  //   "exec": "echo $($HOME/bin/timebox.sh --check)",
+  //   "on-click": "$HOME/bin/timebox.sh --toggle &",
+  //   "format": "box:{text:>2}",
+  //   "tooltip": false,
+  //   "signal": 1,
+  // },
 
   "clock": {
     "interval": 1,
     "format": "{:%Y-%m-%d %a %H:%M:%S}",
     "tooltip": false,
+    "on-click": "foot --app-id=adhd bash -ic adhd",
     // "tooltip-format": "<tt>{calendar}</tt>",
     // "calendar": {
     //   "mode": "year",

@@ -14,7 +14,7 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term foot
+# set $term foot
 # Your preferred application launcher
 # set $menu wmenu-run
 
@@ -65,7 +65,7 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 # Basics:
 #
     # Start a terminal
-    bindsym $mod+Return exec $term
+    # bindsym $mod+Return exec $term
 
     # Kill focused window
     bindsym $mod+Shift+q kill
@@ -269,12 +269,12 @@ exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
 exec cliphist wipe
 exec wl-paste --watch cliphist store
-exec kanshi
-exec_always kanshictl reload
+# exec kanshi
+# exec_always kanshictl reload
+exec_always sh -c 'pkill -x kanshi; exec kanshi'
 exec udiskie --tray
 
 set $menu fuzzel
-# set $term alacritty
 
 seat * xcursor_theme Bibata-Original-Classic 25
 
@@ -293,7 +293,10 @@ focus_wrapping no
 # for_window [app_id="edge"] border none
 # for_window [app_id="firefox"] border none
 # for_window [app_id="zed"] border none
+for_window [app_id="adhd"] fullscreen enable
 
+bindsym $mod+Return exec foot bash -ic mc
+bindsym $mod+Shift+Return exec foot bash -ic sudomc
 bindsym $mod+Print exec grim - | wl-copy && grim "$HOME/Pictures/Screenshots/grimslurp-$(date +%Y-%m-%dT%H-%M-%S-%s).png"
 bindsym $mod+Shift+Print exec grim -g "$(slurp)" - | swappy -f -
 bindsym $mod+Shift+D exec cliphist list | fuzzel --dmenu | cliphist decode | wl-copy

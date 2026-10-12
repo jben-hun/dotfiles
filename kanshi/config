@@ -1,10 +1,17 @@
 profile {
-	output eDP-1 enable
+    output eDP-1 enable
 }
 
 profile {
     output HDMI-A-1 enable
     output eDP-1 disable
+    exec swaymsg workspace 1, move workspace to HDMI-A-1
+}
+
+ profile {
+    output DP-1 enable
+    output eDP-1 disable
+    exec swaymsg workspace 1, move workspace to DP-1
 }
 
 profile {

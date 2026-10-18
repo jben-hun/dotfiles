@@ -17,6 +17,10 @@ cp shared.bashrc ~/.shared.bashrc
 # rm -rf ~/.config/Thunar
 # cp -r Thunar ~/.config
 
+# pcmanfm
+rm -rf ~/.config/pcmanfm
+cp -r pcmanfm ~/.config
+
 # i3
 # rm -rf ~/.config/i3
 # cp -r i3 ~/.config

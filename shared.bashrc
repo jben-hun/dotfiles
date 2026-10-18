@@ -9,9 +9,13 @@
 
 eval "$(zoxide init bash)"
 eval "$(starship init bash)"
+# arch
 # eval "$(fzf --bash)"
 [ -f /usr/share/fzf/key-bindings.bash ] && source /usr/share/fzf/key-bindings.bash
 [ -f /usr/share/fzf/completion.bash ] && source /usr/share/fzf/completion.bash
+#ubuntu
+[ -f /usr/share/doc/fzf/examples/key-bindings.bash ] && source /usr/share/doc/fzf/examples/key-bindings.bash
+[ -f /usr/share/doc/fzf/examples/completion.zsh ] && source /usr/share/doc/fzf/examples/completion.zsh
 
 c() {
     if command -v ncal >/dev/null 2>&1; then
@@ -25,23 +29,23 @@ adhd() {
     local log="$HOME/dhda.csv"
     local timestamp intent exit_point
 
-    printf '\n'
 
-    [[ -f $log ]] && tail -n 6 -- "$log" | awk -F '","' '
-        NR == 1 { next }
-
-        {
-            sub(/^"/, "", $1)
-            sub(/"$/, "", $3)
-
-            for (i = 1; i <= 3; i++) {
-                gsub(/""/, "\"", $i)
-            }
-
-            printf "%s: %s, %s\n", $1, $2, $3
-        }
-    '
-
+    [[ -f $log ]] && tail -n +2 -- "$log" |tail -n 5
+#     printf '\n'
+#     [[ -f $log ]] && tail -n 6 -- "$log" | awk -F '","' '
+#         NR == 1 { next }
+#
+#         {
+#             sub(/^"/, "", $1)
+#             sub(/"$/, "", $3)
+#
+#             for (i = 1; i <= 3; i++) {
+#                 gsub(/""/, "\"", $i)
+#             }
+#
+#             printf "%s: %s, %s\n", $1, $2, $3
+#         }
+#     '
     printf '\n'
 
     LC_TIME=C c

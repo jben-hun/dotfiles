@@ -265,7 +265,9 @@ exec dbus-update-activation-environment --all
 exec systemctl --user import-environment
 exec gnome-keyring-daemon --start --components=secrets
 # exec /usr/lib/polkit-kde-authentication-agent-1
+# arch
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+# ubuntu
 exec /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
 exec cliphist wipe
 exec wl-paste --watch cliphist store
@@ -301,6 +303,7 @@ bindsym $mod+Print exec grim - | wl-copy && grim "$HOME/Pictures/Screenshots/gri
 bindsym $mod+Shift+Print exec grim -g "$(slurp)" - | swappy -f -
 bindsym $mod+Shift+D exec cliphist list | fuzzel --dmenu | cliphist decode | wl-copy
 # bindsym $mod+Shift+Return exec thunar
+# bindsym $mod+q kill
 bindsym $mod+Shift+e exec swaynag \
     --font 'Lilex Nerd Font 11' \
     --background 323232 \

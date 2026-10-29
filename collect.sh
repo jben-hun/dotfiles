@@ -3,6 +3,9 @@
 # bash
 cp ~/.shared.bashrc shared.bashrc
 
+# scripts
+cp ~/bin/nohup-open .
+
 # lxqt
 # rm -rf lxqt
 # cp -r ~/.config/lxqt .

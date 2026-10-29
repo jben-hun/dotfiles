@@ -7,6 +7,8 @@
 # xdg-mime default celluloid.desktop video/mp4 video/x-matroska video/webm video/quicktime video/x-flv video/3gpp audio/mpeg audio/ogg audio/mp4 audio/x-wav
 # xdg-mime default zed.desktop text/plain text/markdown text/x-python text/x-shellscript text/javascript text/css application/json application/xml
 
+export PATH="$PATH:$HOME/bin"
+
 eval "$(zoxide init bash)"
 eval "$(starship init bash)"
 # arch
@@ -77,6 +79,7 @@ alias tree='tree -C'
 alias t='tree'
 alias tt='tree -a'
 
+export MC_XDG_OPEN=~/bin/nohup-open
 alias mc='MC_SKIN=modarin256-defbg . /usr/lib/mc/mc-wrapper.sh'
 alias sudomc='sudo -E bash -c "MC_SKIN=modarin256root-defbg . /usr/lib/mc/mc-wrapper.sh"'
 

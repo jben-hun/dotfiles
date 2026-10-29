@@ -261,14 +261,15 @@ exec firewall-applet
 exec deluge-gtk
 exec blueman-applet
 exec wlsunset -S 8:00 -s 22:00 -t 2500 -T 6500
-exec dbus-update-activation-environment --all
-exec systemctl --user import-environment
-exec gnome-keyring-daemon --start --components=secrets
+# exec gnome-keyring-daemon --start --components=secrets
 # exec /usr/lib/polkit-kde-authentication-agent-1
 # arch
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 # ubuntu
 exec /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
+# exec dbus-update-activation-environment --all
+# exec systemctl --user import-environment
+exec dbus-update-activation-environment --systemd --all
 exec cliphist wipe
 exec wl-paste --watch cliphist store
 # exec kanshi
@@ -304,6 +305,7 @@ bindsym $mod+Shift+Print exec grim -g "$(slurp)" - | swappy -f -
 bindsym $mod+Shift+D exec cliphist list | fuzzel --dmenu | cliphist decode | wl-copy
 # bindsym $mod+Shift+Return exec thunar
 # bindsym $mod+q kill
+bindsym $mod+t exec wlapse
 bindsym $mod+Shift+e exec swaynag \
     --font 'Lilex Nerd Font 11' \
     --background 323232 \

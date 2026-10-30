@@ -7,6 +7,45 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "language_models": {
+    "anthropic_compatible": {
+      "Microsoft Foundry Anthropic": {
+        "api_url": "https://azscaapdintwisdomaifdry.services.ai.azure.com/anthropic",
+        "available_models": [
+          {
+            "name": "AAP-WISDOMAI-FDRY-CLAUDE-OPUS-5-5-WAI-DEVS",
+            "max_tokens": 1000000,
+            "capabilities": {
+              "tools": true,
+              "images": false,
+              "prompt_caching": false,
+            },
+          },
+        ],
+      },
+    },
+    "openai_compatible": {
+      "Microsoft Foundry OpenAI": {
+        "api_url": "https://azscaapdintwisdomaifdry.services.ai.azure.com/api/projects/azscaapdintwisdomaifdry-project/openai/v1",
+        "available_models": [
+          {
+            "name": "AAP-WISDOMAI-FDRY-GPT-6.1-SOL-WAI-DEVS",
+            "max_tokens": 1050000,
+            "reasoning_effort": "medium",
+            "capabilities": {
+              "tools": true,
+              "images": false,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "chat_completions": false,
+              "interleaved_reasoning": false,
+              "max_tokens_parameter": false,
+            },
+          },
+        ],
+      },
+    },
+  },
   "buffer_font_family": "Lilex Nerd Font",
   "diff_view_style": "split",
   "languages": {
@@ -28,38 +67,36 @@
     "sandbox_permissions": {
       "allow_all_hosts": true,
       "network_hosts": [
-        "pubmed.ncbi.nlm.nih.gov",
         "www.strongerbyscience.com"
-      ]
+      ],
     },
     "tool_permissions": {
       "tools": {
         "search_web": {
-          "default": "allow"
+          "default": "allow",
         },
         "fetch": {
           "default": "allow",
-          "always_allow": []
-        }
-      }
+          "always_allow": [],
+        },
+      },
     },
     "flexible": false,
     "dock": "left",
     "default_profile": "write",
     "default_model": {
       "provider": "openai",
-      "model": "gpt-6.1-sol",
+      "model": "gpt-5.6-terra",
       "enable_thinking": true,
       "effort": "medium",
     },
-    "sidebar_side": "right",
     "favorite_models": [
       {
         "provider": "openai",
         "model": "gpt-5.6-terra",
         "enable_thinking": true,
-        "effort": "medium"
-      }
+        "effort": "medium",
+      },
     ],
     "model_parameters": [],
   },
@@ -74,13 +111,7 @@
     "dock": "left",
   },
   "agent_servers": {
-    "github-copilot-cli": {
-      "default_config_options": {
-        "mode": "https://agentclientprotocol.com/protocol/session-modes#agent"
-      },
-      "type": "registry",
     },
-  },
   "base_keymap": "Zed",
   "icon_theme": {
     "mode": "system",
@@ -92,11 +123,11 @@
   "theme": {
     "mode": "dark",
     "light": "One Dark",
-    "dark": "One Dark"
+    "dark": "One Dark",
   },
   "terminal": {
     "env": {
-      "GIT_EDITOR": "zed --wait"
-    }
-  }
+      "GIT_EDITOR": "zed --wait",
+    },
+  },
 }

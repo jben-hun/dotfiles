@@ -4,7 +4,7 @@
   "height": 24,
   "modules-left": ["sway/workspaces", "sway/mode"],
   "modules-center": ["sway/window"],
-  "modules-right": ["tray", "battery", "pulseaudio", "custom/timebox", "clock"],
+  "modules-right": ["tray", "battery", "pulseaudio", "custom/uair", "clock"],
 
   "sway/workspaces": {
     "enable-bar-scroll": true,
@@ -45,7 +45,7 @@
     "on-click": "wpctl set-mute @DEFAULT_SINK@ toggle && canberra-gtk-play -i audio-volume-change",
     "on-scroll-down": "wpctl set-volume @DEFAULT_SINK@ 5%- && canberra-gtk-play -i audio-volume-change",
     "on-scroll-up": "wpctl set-volume @DEFAULT_SINK@ 5%+ --limit 1.0 && canberra-gtk-play -i audio-volume-change",
-    "on-click-right": "wpctl set-mute @DEFAULT_SOURCE@ toggle && canberra-gtk-play -i audio-volume-change",
+    // "on-click-right": "wpctl set-mute @DEFAULT_SOURCE@ toggle && canberra-gtk-play -i audio-volume-change",
   },
 
   // "custom/timebox": {
@@ -55,6 +55,14 @@
   //   "tooltip": false,
   //   "signal": 1,
   // },
+
+  "custom/uair": {
+    "exec": "uairctl fetch '{time}'",
+    "interval": 1,
+    "on-click": "uairctl toggle",
+    "on-click-right": "uairctl next",
+    "tooltip": false,
+  },
 
   "clock": {
     "interval": 1,

@@ -5,7 +5,7 @@ window#waybar {
     font-size: 16px;
 }
 
-#tray, #battery, #pulseaudio, #pulseaudio, #custom-timebox, #clock {
+#tray, #battery, #pulseaudio, #pulseaudio, #custom-uair, #clock {
     padding-left: 16px;
 }
 

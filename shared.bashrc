@@ -31,6 +31,9 @@ adhd() {
     local log="$HOME/dhda.csv"
     local timestamp intent exit_point
 
+    LC_TIME=C c -y
+
+    printf '\n'
 
     [[ -f $log ]] && tail -n +2 -- "$log" |tail -n 5
 #     printf '\n'
@@ -48,9 +51,6 @@ adhd() {
 #             printf "%s: %s, %s\n", $1, $2, $3
 #         }
 #     '
-    printf '\n'
-
-    LC_TIME=C c
 
     timestamp=$(LC_TIME=C date '+%Y-%m-%d %a %H:%M:%S')
     printf '\n%s\n\n' "$timestamp"

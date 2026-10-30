@@ -276,6 +276,7 @@ exec wl-paste --watch cliphist store
 # exec_always kanshictl reload
 exec_always sh -c 'pkill -x kanshi; exec kanshi'
 exec udiskie --tray
+exec uair -q
 
 set $menu fuzzel
 
@@ -305,7 +306,7 @@ bindsym $mod+Shift+Print exec grim -g "$(slurp)" - | swappy -f -
 bindsym $mod+Shift+D exec cliphist list | fuzzel --dmenu | cliphist decode | wl-copy
 # bindsym $mod+Shift+Return exec thunar
 # bindsym $mod+q kill
-bindsym $mod+t exec wlapse
+# bindsym $mod+t exec wlapse
 bindsym $mod+Shift+e exec swaynag \
     --font 'Lilex Nerd Font 11' \
     --background 323232 \

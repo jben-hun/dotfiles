@@ -4,7 +4,7 @@
   "height": 24,
   "modules-left": ["sway/workspaces", "sway/mode"],
   "modules-center": ["sway/window"],
-  "modules-right": ["tray", "battery", "pulseaudio", "custom/uair", "clock"],
+  "modules-right": ["tray", "battery", "pulseaudio", "custom/pomo", "clock"],
 
   "sway/workspaces": {
     "enable-bar-scroll": true,
@@ -56,11 +56,18 @@
   //   "signal": 1,
   // },
 
-  "custom/uair": {
-    "exec": "uairctl fetch '{time}'",
+  // "custom/uair": {
+  //   "exec": "uairctl fetch '{time}'",
+  //   "interval": 1,
+  //   "on-click": "uairctl toggle",
+  //   "on-click-right": "uairctl next",
+  //   "tooltip": false,
+  // },
+
+  "custom/pomo": {
+    "exec": "$HOME/bin/pomo",
     "interval": 1,
-    "on-click": "uairctl toggle",
-    "on-click-right": "uairctl next",
+    "on-click": "$HOME/bin/pomo toggle",
     "tooltip": false,
   },
 

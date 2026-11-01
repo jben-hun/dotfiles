@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+file="${XDG_RUNTIME_DIR:?}/pomo-cycle"
+now=$(date +%s)
+minutes=25 end=0
+[[ -f $file ]] && read -r minutes end < "$file"
+
+if (( end > 0 && now >= end )); then
+    minutes=$((30 - minutes))
+    end=0
+    echo "$minutes $end" > "$file"
+    notify-send '🍅'
+fi
+
+if [[ ${1:-} == toggle ]]; then
+    if (( end > 0 )); then
+        minutes=$((30 - minutes))
+        end=0
+    else
+        end=$((now + minutes * 60 - 1))
+    fi
+    echo "$minutes $end" > "$file"
+fi
+
+left=$((end > 0 ? end - now : minutes * 60))
+printf '%02d:%02d\n' "$((left / 60))" "$((left % 60))"

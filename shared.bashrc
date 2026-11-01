@@ -7,6 +7,19 @@
 # xdg-mime default celluloid.desktop video/mp4 video/x-matroska video/webm video/quicktime video/x-flv video/3gpp audio/mpeg audio/ogg audio/mp4 audio/x-wav
 # xdg-mime default zed.desktop text/plain text/markdown text/x-python text/x-shellscript text/javascript text/css application/json application/xml
 
+# # ~/.config/systemd/user/gtfo.service
+# [Service]
+# Type=oneshot
+# ExecStart=/bin/sh -c 'notify-send "t-10s"; sleep 10; swaymsg exec "swaylock -f -c 222222"'
+
+# # ~/.config/systemd/user/gtfo.timer
+# [Timer]
+# # OnCalendar=*-*-* 17..23:00/5:00
+# OnCalendar=*-*-*   22..23:00/5:00
+#
+# [Install]
+# WantedBy=timers.target
+
 export PATH="$PATH:$HOME/bin"
 
 eval "$(zoxide init bash)"

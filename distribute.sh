@@ -8,6 +8,7 @@ cp shared.bashrc ~/.shared.bashrc
 # scripts
 mkdir -p ~/bin
 cp nohup-open ~/bin
+cp pomo ~/bin
 
 # lxqt
 # rm -rf ~/.config/lxqt

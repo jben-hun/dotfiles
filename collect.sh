@@ -5,6 +5,7 @@ cp ~/.shared.bashrc shared.bashrc
 
 # scripts
 cp ~/bin/nohup-open .
+cp ~/bin/pomo .
 
 # lxqt
 # rm -rf lxqt

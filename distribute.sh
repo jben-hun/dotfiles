@@ -38,8 +38,8 @@ rm -rf ~/.config/kanshi
 cp -r kanshi ~/.config
 
 # uair
-rm -rf ~/.config/uair
-cp -r uair ~/.config
+# rm -rf ~/.config/uair
+# cp -r uair ~/.config
 
 # rofi
 # rm -rf ~/.config/rofi

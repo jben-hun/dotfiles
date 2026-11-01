@@ -37,6 +37,10 @@ cp -r sway ~/.config
 rm -rf ~/.config/kanshi
 cp -r kanshi ~/.config
 
+# uair
+rm -rf ~/.config/uair
+cp -r uair ~/.config
+
 # rofi
 # rm -rf ~/.config/rofi
 # cp -r rofi ~/.config

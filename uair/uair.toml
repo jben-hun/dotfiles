@@ -1,0 +1,14 @@
+pause_at_start = false
+loop_on_end = true
+
+[defaults]
+format = "{time}"
+time_format = "%M:%S"
+autostart = false
+command = "notify-send '🍅'"
+
+[[sessions]]
+duration = "25m"
+
+[[sessions]]
+duration = "5m"

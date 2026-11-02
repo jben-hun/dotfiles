@@ -10,7 +10,7 @@
 # # ~/.config/systemd/user/gtfo.service
 # [Service]
 # Type=oneshot
-# ExecStart=/bin/sh -c 'notify-send "t-10s"; sleep 10; swaymsg exec "swaylock -f -c 222222"'
+# ExecStart=/bin/sh -c 'notify-send "t-30s"; sleep 30; swaymsg exec "swaylock -f -c 222222"'
 
 # # ~/.config/systemd/user/gtfo.timer
 # [Timer]

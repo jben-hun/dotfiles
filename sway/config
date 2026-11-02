@@ -261,7 +261,7 @@ exec firewall-applet
 exec deluge-gtk
 exec blueman-applet
 exec wlsunset -S 8:00 -s 22:00 -t 2500 -T 6500
-# exec gnome-keyring-daemon --start --components=secrets
+exec gnome-keyring-daemon --start --components=secrets
 # exec /usr/lib/polkit-kde-authentication-agent-1
 # arch
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
@@ -276,7 +276,7 @@ exec wl-paste --watch cliphist store
 # exec_always kanshictl reload
 exec_always sh -c 'pkill -x kanshi; exec kanshi'
 exec udiskie --tray
-exec uair -q
+# exec uair -q
 
 set $menu fuzzel
 
@@ -301,8 +301,9 @@ for_window [app_id="adhd"] fullscreen enable
 
 bindsym $mod+Return exec foot bash -ic mc
 bindsym $mod+Shift+Return exec foot bash -ic sudomc
-bindsym $mod+Print exec grim - | wl-copy && grim "$HOME/Pictures/Screenshots/grimslurp-$(date +%Y-%m-%dT%H-%M-%S-%s).png"
-bindsym $mod+Shift+Print exec grim -g "$(slurp)" - | swappy -f -
+bindsym Print exec grim - | tee "$HOME/Pictures/Screenshots/grim-$(date +%Y-%m-%dT%H-%M-%S-%s).png" | wl-copy
+bindsym $mod+Print exec grim -g "$(slurp)" - | swappy -f -
+bindsym $mod+Shift+Print exec sleep 5 && grim - | swappy -f -
 bindsym $mod+Shift+D exec cliphist list | fuzzel --dmenu | cliphist decode | wl-copy
 # bindsym $mod+Shift+Return exec thunar
 # bindsym $mod+q kill

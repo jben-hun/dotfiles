@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<openbox_menu>
+    <menu id="root-menu">
+        <menu id="" label="logout" icon="">
+            <item label="lock"><action command="swaylock -f -c 222222" /></item>
+            <item label="suspend"><action command="systemctl suspend" /></item>
+            <item label="hybrid-sleep"
+                ><action command="systemctl hybrid-sleep"
+            /></item>
+            <item label="hibernate"
+                ><action command="systemctl hibernate"
+            /></item>
+            <separator />
+            <item label="exit"><action name="Exit" /></item>
+            <item label="poweroff"
+                ><action command="systemctl poweroff"
+            /></item>
+            <item label="reboot"><action command="systemctl reboot" /></item>
+        </menu>
+        <item label="reconfigure"><action name="Reconfigure" /></item>
+        <item label="terminal"
+            ><action name="Execute" command="lab-sensible-terminal"
+        /></item>
+    </menu>
+</openbox_menu>

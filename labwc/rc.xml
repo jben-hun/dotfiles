@@ -1,0 +1,246 @@
+<labwc_config>
+    <keyboard>
+        <!-- The W- prefix refers to the Super key -->
+
+        <layoutScope>global</layoutScope>
+        <repeatRate>25</repeatRate>
+        <repeatDelay>600</repeatDelay>
+        <!--<keybind key="A-Tab">
+          <action name="NextWindow" />
+        </keybind>
+        <keybind key="A-S-Tab">
+          <action name="PreviousWindow" />
+        </keybind>-->
+        <keybind key="W-Return">
+            <action name="Execute" command="lab-sensible-terminal" />
+        </keybind>
+        <keybind key="A-F4">
+            <action name="Close" />
+        </keybind>
+        <keybind key="W-a">
+            <action name="ToggleMaximize" />
+        </keybind>
+        <keybind key="W-d">
+            <action name="ToggleShowDesktop" />
+        </keybind>
+        <keybind key="W-Left">
+            <action name="SnapToEdge" direction="left" combine="yes" />
+        </keybind>
+        <keybind key="W-Right">
+            <action name="SnapToEdge" direction="right" combine="yes" />
+        </keybind>
+        <keybind key="W-Up">
+            <action name="SnapToEdge" direction="up" combine="yes" />
+        </keybind>
+        <keybind key="W-Down">
+            <action name="SnapToEdge" direction="down" combine="yes" />
+        </keybind>
+        <keybind key="A-Space">
+            <action name="ShowMenu" menu="client-menu" atCursor="no" />
+        </keybind>
+        <keybind key="XF86AudioLowerVolume">
+            <action
+                name="Execute"
+                command="pactl set-sink-volume @DEFAULT_SINK@ -5%"
+            />
+        </keybind>
+        <keybind key="XF86AudioRaiseVolume">
+            <action
+                name="Execute"
+                command="pactl set-sink-volume @DEFAULT_SINK@ +5%"
+            />
+        </keybind>
+        <keybind key="XF86AudioMute">
+            <action
+                name="Execute"
+                command="pactl set-sink-mute @DEFAULT_SINK@ toggle"
+            />
+        </keybind>
+        <keybind key="XF86MonBrightnessUp">
+            <action name="Execute" command="brightnessctl set +10%" />
+        </keybind>
+        <keybind key="XF86MonBrightnessDown">
+            <action name="Execute" command="brightnessctl set 10%-" />
+        </keybind>
+
+        <keybind key="Print">
+            <action
+                name="Execute"
+                command="sh -c 'grim - | tee &quot;$HOME/Pictures/Screenshots/grim-$(date +%Y-%m-%dT%H-%M-%S-%s).png&quot; | wl-copy --type image/png'"
+            />
+        </keybind>
+        <keybind key="S-W-Print">
+            <action
+                name="Execute"
+                command="sh -c 'sleep 5 &amp;&amp;&amp; grim - | swappy -f -'"
+            />
+        </keybind>
+        <keybind key="W-Print">
+            <action
+                name="Execute"
+                command="sh -c 'grim -g &quot;$(slurp)&quot; - | swappy -f -'"
+            />
+        </keybind>
+        <keybind key="S-W-Space">
+            <action
+                name="Execute"
+                command="sh -c 'cliphist list | fuzzel --dmenu | cliphist decode | wl-copy --type image/png'"
+            />
+        </keybind>
+
+        <keybind key="W-Tab">
+            <action name="NextWindow" />
+        </keybind>
+        <keybind key="S-W-Tab">
+            <action name="PreviousWindow" />
+        </keybind>
+        <keybind key="W-f">
+            <action name="ToggleFullscreen" />
+        </keybind>
+        <keybind key="W-s">
+            <action name="Lower" />
+        </keybind>
+        <keybind key="W-w">
+            <action name="ToggleAlwaysOnTop" />
+        </keybind>
+        <keybind key="W-q">
+            <action name="Close" />
+        </keybind>
+        <keybind key="W-e">
+            <action name="ShowMenu" menu="root-menu" />
+        </keybind>
+        <!--<keybind key="Super_L" onRelease="yes">
+            <action name="Execute" command="fuzzel" />
+        </keybind>-->
+        <keybind key="W-Space">
+            <action name="Execute" command="fuzzel" />
+        </keybind>
+        <keybind key="W-Prior">
+            <action name="GoToDesktop" to="left" />
+        </keybind>
+        <keybind key="W-Next">
+            <action name="GoToDesktop" to="right" />
+        </keybind>
+        <keybind key="S-W-Prior">
+            <action name="SendToDesktop" to="left" />
+        </keybind>
+        <keybind key="S-W-Next">
+            <action name="SendToDesktop" to="right" />
+        </keybind>
+        <keybind key="W-1">
+            <action name="GoToDesktop" to="1" />
+        </keybind>
+        <keybind key="W-2">
+            <action name="GoToDesktop" to="2" />
+        </keybind>
+        <keybind key="W-3">
+            <action name="GoToDesktop" to="3" />
+        </keybind>
+        <keybind key="W-4">
+            <action name="GoToDesktop" to="4" />
+        </keybind>
+        <keybind key="S-W-1">
+            <action name="SendToDesktop" to="1" />
+        </keybind>
+        <keybind key="S-W-2">
+            <action name="SendToDesktop" to="2" />
+        </keybind>
+        <keybind key="S-W-3">
+            <action name="SendToDesktop" to="3" />
+        </keybind>
+        <keybind key="S-W-4">
+            <action name="SendToDesktop" to="4" />
+        </keybind>
+    </keyboard>
+    <core>
+        <autoEnableOutputs>no</autoEnableOutputs>
+        <decoration>server</decoration>
+    </core>
+    <windowSwitcher preview="yes" outlines="yes">
+        <osd
+            show="yes"
+            style="thumbnail"
+            output="all"
+            thumbnailLabelFormat="%n (%I) %b"
+        />
+        <fields>
+            <field content="icon" width="5%" />
+            <field content="desktop_entry_name" width="30%" />
+            <field content="title" width="65%" />
+        </fields>
+    </windowSwitcher>
+    <desktops number="4" popupTime="1" prefix="" />
+    <snapping>
+        <range inner="100" outer="100" />
+        <cornerRange>100</cornerRange>
+        <overlay>
+            <delay inner="0" outer="0" />
+        </overlay>
+        <topMaximize>no</topMaximize>
+    </snapping>
+    <focus followMouse="yes">
+        <followMouseRequiresMovement>yes</followMouseRequiresMovement>
+    </focus>
+    <theme>
+        <name>labTeallach</name>
+        <maximizedDecoration>none</maximizedDecoration>
+        <dropShadows>no</dropShadows>
+        <dropShadowsOnTiled>no</dropShadowsOnTiled>
+        <icon>Papirus-Dark</icon>
+        <titlebar>
+            <layout>icon:max,close</layout>
+        </titlebar>
+    </theme>
+    <resize>
+        <popupShow>never</popupShow>
+        <drawContents>yes</drawContents>
+    </resize>
+    <placement>
+        <policy>cursor</policy>
+    </placement>
+    <windowRules>
+        <windowRule identifier="adhd">
+            <action name="ToggleFullscreen" />
+        </windowRule>
+    </windowRules>
+    <resistance>
+        <screenEdgeStrength>-40</screenEdgeStrength>
+        <windowEdgeStrength>-40</windowEdgeStrength>
+    </resistance>
+    <regions>
+        <!-- Group 1: Uniform 2x3 Grid (33% Width, 50% Height) -->
+        <region name="top-left" x="0%" y="0%" width="33%" height="50%" />
+        <region name="top-center" x="33%" y="0%" width="34%" height="50%" />
+        <region name="top-right" x="67%" y="0%" width="33%" height="50%" />
+        <region name="bottom-left" x="0%" y="50%" width="33%" height="50%" />
+        <region name="bottom-center" x="33%" y="50%" width="34%" height="50%" />
+        <region name="bottom-right" x="67%" y="50%" width="33%" height="50%" />
+
+        <!-- Group 2: Full-Height Vertical Pillars (33% Width, 100% Height) -->
+        <region name="left" x="0%" y="0%" width="33%" height="100%" />
+        <region name="center" x="33%" y="0%" width="34%" height="100%" />
+        <region name="right" x="67%" y="0%" width="33%" height="100%" />
+
+        <!-- Group 3: Vertical Masters (2 Columns Wide, Full Height) -->
+        <region name="master-left" x="0%" y="0%" width="67%" height="100%" />
+        <region name="master-right" x="33%" y="0%" width="67%" height="100%" />
+
+        <!-- Group 4: Horizontal Masters (2 Columns Wide, 1 Row High) -->
+        <region name="quad-top-left" x="0%" y="0%" width="67%" height="50%" />
+        <region name="quad-top-right" x="33%" y="0%" width="67%" height="50%" />
+        <region
+            name="quad-bottom-left"
+            x="0%"
+            y="50%"
+            width="67%"
+            height="50%"
+        />
+        <region
+            name="quad-bottom-right"
+            x="33%"
+            y="50%"
+            width="67%"
+            height="50%"
+        />
+    </regions>
+</labwc_config>

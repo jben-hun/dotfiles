@@ -5,7 +5,12 @@ window#waybar {
     font-size: 16px;
 }
 
-#tray, #battery, #pulseaudio, #pulseaudio, #custom-pomo, #clock {
+#tray,
+#battery,
+#pulseaudio,
+#pulseaudio,
+#custom-pomo,
+#clock {
     padding-left: 16px;
 }
 
@@ -13,23 +18,31 @@ window#waybar {
     padding-right: 8px;
 }
 
-#workspaces button {
+#workspaces button,
+#taskbar button,
+#taskbar button.maximized,
+#taskbar button.minimized,
+#taskbar button.fullscreen {
     border: none;
     padding: 0 8px;
     border-radius: 0;
 }
 
-#workspaces button.focused {
+#workspaces button.focused,
+#workspaces button.active,
+#taskbar button.active {
     color: #ffffff;
     background-color: #285577;
 }
 
-#workspaces button.urgent {
+#workspaces button.urgent,
+#taskbar button.urgent {
     color: #ffffff;
     background-color: #900000;
 }
 
-#workspaces button:hover {
+#workspaces button:hover,
+#taskbar button:hover {
     color: #285577;
     background-color: #ffffff;
 }

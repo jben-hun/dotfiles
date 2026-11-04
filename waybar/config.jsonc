@@ -1,91 +1,18 @@
 {
-  "layer": "top",
-  "position": "bottom",
-  "height": 24,
-  "modules-left": ["sway/workspaces", "sway/mode"],
-  "modules-center": ["sway/window"],
+  "include": ["/home/jben/.config/waybar/config-common.jsonc"],
+  "modules-left": ["ext/workspaces", "wlr/taskbar"],
   "modules-right": ["tray", "battery", "pulseaudio", "custom/pomo", "clock"],
 
-  "sway/workspaces": {
-    "enable-bar-scroll": true,
-    "disable-scroll-wraparound": true,
+  "ext/workspaces": {
+    "format": "{name}",
+    "sort-by-number": true,
+    "on-click": "activate",
   },
 
-  "sway/mode": {},
-
-  "sway/window": {
-    "format": "{app_id}: {title} ({shell})",
-    "rewrite": {
-      "^:  \\(\\)$": "",
-    },
-  },
-
-  "tray": {
-    "icon-size": 24,
-    "show-passive-items": true,
-  },
-
-  "battery": {
-    "interval": 60,
-    "states": {
-      "warning": 50,
-      "critical": 25,
-    },
-    "events": {
-      "on-discharging-warning": "notify-send -u normal 'low battery'",
-      "on-discharging-critical": "notify-send -u critical 'very low battery'",
-    },
-    "format": "bat:{capacity:3}%",
-  },
-
-  "pulseaudio": {
-    "format": "vol:{volume:3}%",
-    "format-muted": "vol:---%",
-    "on-click-middle": "pavucontrol",
-    "on-click": "wpctl set-mute @DEFAULT_SINK@ toggle && canberra-gtk-play -i audio-volume-change",
-    "on-scroll-down": "wpctl set-volume @DEFAULT_SINK@ 5%- && canberra-gtk-play -i audio-volume-change",
-    "on-scroll-up": "wpctl set-volume @DEFAULT_SINK@ 5%+ --limit 1.0 && canberra-gtk-play -i audio-volume-change",
-    // "on-click-right": "wpctl set-mute @DEFAULT_SOURCE@ toggle && canberra-gtk-play -i audio-volume-change",
-  },
-
-  // "custom/timebox": {
-  //   "exec": "echo $($HOME/bin/timebox.sh --check)",
-  //   "on-click": "$HOME/bin/timebox.sh --toggle &",
-  //   "format": "box:{text:>2}",
-  //   "tooltip": false,
-  //   "signal": 1,
-  // },
-
-  // "custom/uair": {
-  //   "exec": "uairctl fetch '{time}'",
-  //   "interval": 1,
-  //   "on-click": "uairctl toggle",
-  //   "on-click-right": "uairctl next",
-  //   "tooltip": false,
-  // },
-
-  "custom/pomo": {
-    "exec": "$HOME/bin/pomo",
-    "interval": 1,
-    "on-click": "$HOME/bin/pomo toggle",
-    "tooltip": false,
-  },
-
-  "clock": {
-    "interval": 1,
-    "format": "{:%Y-%m-%d %a %H:%M:%S}",
-    "tooltip": false,
-    "on-click": "foot --app-id=adhd bash -ic adhd",
-    // "tooltip-format": "<tt>{calendar}</tt>",
-    // "calendar": {
-    //   "mode": "year",
-    //   "mode-mon-col": 3,
-    //   "weeks-pos": "left",
-    //   "first-day-of-week": 1,
-    //   "format": {
-    //     "days": "<span color='#ffffff'>{}</span>",
-    //     "today": "<span color='#900000'><b><i>{}</i></b></span>",
-    //   },
-    // },
+  "wlr/taskbar": {
+    "format": "{icon} {name}",
+    "on-click": "activate",
+    "tooltip-format": "{app_id}: {title}",
+    "icon-theme": "Papirus-Dark",
   },
 }

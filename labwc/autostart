@@ -1,0 +1,28 @@
+systemctl -q --no-block --user start labwc-session.target &
+
+kanshi >/dev/null 2>&1 &
+waybar --log-level off &
+swaybg -m fill -i ~/.local/share/backgrounds/background >/dev/null 2>&1 &
+mako >/dev/null 2>&1 &
+
+swayidle -w \
+    timeout 900 'swaymsg "output * power off"' \
+    resume 'swaymsg "output * power on"' \
+    before-sleep 'playerctl pause' &
+nm-applet --indicator &
+firewall-applet &
+deluge-gtk &
+blueman-applet &
+wlsunset -S 8:00 -s 22:00 -t 2500 -T 6500 &
+gnome-keyring-daemon --start --components=secrets &
+# /usr/lib/polkit-kde-authentication-agent-1
+# # arch
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+# ubuntu
+/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
+dbus-update-activation-environment --all &
+systemctl --user import-environment &
+dbus-update-activation-environment --systemd --all &
+cliphist wipe &
+wl-paste --watch cliphist store &
+udiskie --tray &

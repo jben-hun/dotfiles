@@ -1,0 +1,21 @@
+{
+  "layer": "top",
+  "position": "bottom",
+  "height": 24,
+  "modules-left": ["sway/workspaces", "sway/mode"],
+  "modules-center": ["sway-window"],
+
+  "sway/workspaces": {
+    "enable-bar-scroll": true,
+    "disable-scroll-wraparound": true,
+  },
+
+  "sway/mode": {},
+
+  "sway/window": {
+    "format": "{app_id}: {title} ({shell})",
+    "rewrite": {
+      "^:  \\(\\)$": "",
+    },
+  },
+}

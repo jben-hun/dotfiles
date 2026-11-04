@@ -301,7 +301,7 @@ for_window [app_id="adhd"] fullscreen enable
 
 # bindsym $mod+Return exec foot bash -ic mc
 # bindsym $mod+Shift+Return exec foot bash -ic sudomc
-bindsym $mod+Return exec foot
+bindsym $mod+Return exec alacritty
 bindsym Print exec grim - | tee "$HOME/Pictures/Screenshots/grim-$(date +%Y-%m-%dT%H-%M-%S-%s).png" | wl-copy
 bindsym $mod+Print exec grim -g "$(slurp)" - | swappy -f -
 bindsym $mod+Shift+Print exec sleep 5 && grim - | swappy -f -

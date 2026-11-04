@@ -32,6 +32,10 @@ cp -r ~/.config/pcmanfm .
 rm -rf sway
 cp -r ~/.config/sway .
 
+# labwc
+rm -rf labwc
+cp -r ~/.config/labwc .
+
 # kanshi
 rm -rf kanshi
 cp -r ~/.config/kanshi .

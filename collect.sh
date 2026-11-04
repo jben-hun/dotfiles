@@ -65,8 +65,12 @@ cp -r ~/.config/waybar .
 # cp -r ~/.config/polybar .
 
 # foot
-rm -rf foot
-cp -r ~/.config/foot .
+# rm -rf foot
+# cp -r ~/.config/foot .
+
+# alacritty
+rm -rf alacritty
+cp -r ~/.config/alacritty .
 
 # swappy
 rm -rf swappy

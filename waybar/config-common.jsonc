@@ -2,8 +2,7 @@
   "layer": "top",
   "position": "bottom",
   "height": 24,
-  "modules-left": ["ext/workspaces", "wlr/taskbar"],
-  "modules-center": [],
+
   "modules-right": ["tray", "battery", "pulseaudio", "custom/pomo", "clock"],
 
   // "sway/workspaces": {
@@ -14,9 +13,9 @@
   // "sway/mode": {},
 
   "ext/workspaces": {
-      "format": "{name}",
-      "sort-by-number": true,
-      "on-click": "activate",
+    "format": "{name}",
+    "sort-by-number": true,
+    "on-click": "activate",
   },
 
   // "sway/window": {
@@ -27,10 +26,10 @@
   // },
 
   "wlr/taskbar": {
-      "format": "{icon} {name}",
-      "on-click": "activate",
-      "tooltip-format": "{app_id}: {title}",
-      "icon-theme": "Papirus-Dark",
+    "format": "{icon} {name}",
+    "on-click": "activate",
+    "tooltip-format": "{app_id}: {title}",
+    "icon-theme": "Papirus-Dark",
   },
 
   "tray": {

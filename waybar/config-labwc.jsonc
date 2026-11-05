@@ -1,0 +1,18 @@
+{
+  "include": ["config-common.jsonc"],
+
+  "modules-left": ["ext/workspaces", "wlr/taskbar"],
+
+  "ext/workspaces": {
+    "format": "{name}",
+    "sort-by-number": true,
+    "on-click": "activate",
+  },
+
+  "wlr/taskbar": {
+    "format": "{icon}",
+    "on-click": "activate",
+    "tooltip-format": "{name} ({app_id}): {title}",
+    "icon-theme": "Papirus-Dark",
+  },
+}

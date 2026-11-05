@@ -1,18 +1,20 @@
 {
-  "include": ["/home/jben/.config/waybar/config-common.jsonc"],
-  "modules-left": ["ext/workspaces", "wlr/taskbar"],
-  "modules-right": ["tray", "battery", "pulseaudio", "custom/pomo", "clock"],
+  "include": ["config-common.jsonc"],
 
-  "ext/workspaces": {
-    "format": "{name}",
-    "sort-by-number": true,
-    "on-click": "activate",
+  "modules-left": ["sway/workspaces", "sway/mode"],
+  "modules-center": ["sway/window"],
+
+  "sway/workspaces": {
+    "enable-bar-scroll": true,
+    "disable-scroll-wraparound": true,
   },
 
-  "wlr/taskbar": {
-    "format": "{icon} {name}",
-    "on-click": "activate",
-    "tooltip-format": "{app_id}: {title}",
-    "icon-theme": "Papirus-Dark",
+  "sway/mode": {},
+
+  "sway/window": {
+    "format": "{app_id}: {title} ({shell})",
+    "rewrite": {
+      "^:  \\(\\)$": "",
+    },
   },
 }

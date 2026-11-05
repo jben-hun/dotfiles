@@ -17,13 +17,13 @@
         <keybind key="A-F4">
             <action name="Close" />
         </keybind>
-        <keybind key="W-a">
+        <!-- <keybind key="W-a">
             <action name="ToggleMaximize" />
-        </keybind>
-        <keybind key="W-d">
+        </keybind> -->
+        <!-- <keybind key="W-d">
             <action name="ToggleShowDesktop" />
-        </keybind>
-        <keybind key="W-Left">
+        </keybind> -->
+        <!-- <keybind key="W-Left">
             <action name="SnapToEdge" direction="left" combine="yes" />
         </keybind>
         <keybind key="W-Right">
@@ -34,10 +34,10 @@
         </keybind>
         <keybind key="W-Down">
             <action name="SnapToEdge" direction="down" combine="yes" />
-        </keybind>
-        <keybind key="A-Space">
+        </keybind> -->
+        <!-- <keybind key="A-Space">
             <action name="ShowMenu" menu="client-menu" atCursor="no" />
-        </keybind>
+        </keybind> -->
         <keybind key="XF86AudioLowerVolume">
             <action
                 name="Execute"
@@ -63,6 +63,21 @@
             <action name="Execute" command="brightnessctl set 10%-" />
         </keybind>
 
+        <keybind key="W-Space">
+            <action name="ShowMenu" menu="client-menu" />
+        </keybind>
+        <keybind key="W-Left">
+            <action name="SnapToEdge" direction="left" combine="yes" />
+        </keybind>
+        <keybind key="W-Right">
+            <action name="SnapToEdge" direction="right" combine="yes" />
+        </keybind>
+        <keybind key="W-Up">
+            <action name="SnapToEdge" direction="up" combine="yes" />
+        </keybind>
+        <keybind key="W-Down">
+            <action name="SnapToEdge" direction="down" combine="yes" />
+        </keybind>
         <keybind key="Print">
             <action
                 name="Execute"
@@ -81,27 +96,26 @@
                 command="sh -c 'grim -g &quot;$(slurp)&quot; - | swappy -f -'"
             />
         </keybind>
-        <keybind key="S-W-Space">
+        <keybind key="S-W-d">
             <action
                 name="Execute"
                 command="sh -c 'cliphist list | fuzzel --dmenu | cliphist decode | wl-copy --type image/png'"
             />
         </keybind>
-
-        <keybind key="W-Tab">
-            <action name="NextWindow" />
-        </keybind>
-        <keybind key="S-W-Tab">
-            <action name="PreviousWindow" />
-        </keybind>
         <keybind key="W-f">
+            <action name="ToggleMaximize" />
+        </keybind>
+        <keybind key="S-W-f">
             <action name="ToggleFullscreen" />
         </keybind>
         <keybind key="W-s">
             <action name="Lower" />
         </keybind>
-        <keybind key="W-w">
+        <keybind key="W-a">
             <action name="ToggleAlwaysOnTop" />
+        </keybind>
+        <keybind key="W-v">
+            <action name="UnSnap" />
         </keybind>
         <keybind key="W-q">
             <action name="Close" />
@@ -112,20 +126,17 @@
         <!--<keybind key="Super_L" onRelease="yes">
             <action name="Execute" command="fuzzel" />
         </keybind>-->
-        <keybind key="W-Space">
+        <keybind key="W-d">
             <action name="Execute" command="fuzzel" />
         </keybind>
-        <keybind key="W-Prior">
-            <action name="GoToDesktop" to="left" />
+        <keybind key="W-Tab">
+            <action name="NextWindow" />
         </keybind>
-        <keybind key="W-Next">
-            <action name="GoToDesktop" to="right" />
+        <keybind key="S-W-Tab">
+            <action name="PreviousWindow" />
         </keybind>
-        <keybind key="S-W-Prior">
-            <action name="SendToDesktop" to="left" />
-        </keybind>
-        <keybind key="S-W-Next">
-            <action name="SendToDesktop" to="right" />
+        <keybind key="S-W-Space" action="Press">
+            <action name="ShowMenu" menu="client-list-combined-menu" />
         </keybind>
         <keybind key="W-1">
             <action name="GoToDesktop" to="1" />
@@ -140,18 +151,38 @@
             <action name="GoToDesktop" to="4" />
         </keybind>
         <keybind key="S-W-1">
-            <action name="SendToDesktop" to="1" />
+            <action name="SendToDesktop" to="1" follow="no" />
         </keybind>
         <keybind key="S-W-2">
-            <action name="SendToDesktop" to="2" />
+            <action name="SendToDesktop" to="2" follow="no" />
         </keybind>
         <keybind key="S-W-3">
-            <action name="SendToDesktop" to="3" />
+            <action name="SendToDesktop" to="3" follow="no" />
         </keybind>
         <keybind key="S-W-4">
-            <action name="SendToDesktop" to="4" />
+            <action name="SendToDesktop" to="4" follow="no" />
         </keybind>
     </keyboard>
+    <mouse>
+        <default />
+        <context name="All">
+            <mousebind button="W-Middle" action="Press">
+                <action name="Close" />
+            </mousebind>
+            <mousebind direction="S-W-Up" action="Scroll">
+                <action name="GoToDesktop" to="left" wrap="no" />
+            </mousebind>
+            <mousebind direction="S-W-Down" action="Scroll">
+                <action name="GoToDesktop" to="right" wrap="no" />
+            </mousebind>
+            <mousebind direction="W-Down" action="Scroll">
+                <action name="NextWindow" />
+            </mousebind>
+            <mousebind direction="W-Up" action="Scroll">
+                <action name="PreviousWindow" />
+            </mousebind>
+        </context>
+    </mouse>
     <core>
         <autoEnableOutputs>no</autoEnableOutputs>
         <decoration>server</decoration>

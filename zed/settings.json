@@ -83,7 +83,7 @@
     },
     "flexible": false,
     "dock": "left",
-    "default_profile": "ask",
+    "default_profile": "minimal",
     "default_model": {
       "provider": "openai",
       "model": "gpt-5.6-terra",

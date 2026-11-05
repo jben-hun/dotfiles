@@ -1,5 +1,5 @@
 {
-  "include": ["config-common.jsonc"],
+  "include": ["$HOME/.config/waybar/config-common.jsonc"],
 
   "modules-left": ["ext/workspaces", "wlr/taskbar"],
 

@@ -67,7 +67,6 @@
     "sandbox_permissions": {
       "allow_all_hosts": true,
       "network_hosts": [
-        "www.strongerbyscience.com"
       ],
     },
     "tool_permissions": {
@@ -111,7 +110,10 @@
     "dock": "left",
   },
   "agent_servers": {
-    },
+    "github-copilot-cli": {
+      "type": "registry"
+    }
+  },
   "base_keymap": "Zed",
   "icon_theme": {
     "mode": "system",

@@ -87,8 +87,8 @@
     "interval": 1,
     "format": "{:%Y-%m-%d %a %H:%M:%S}",
     "tooltip": false,
-    "on-click": "alacritty --class=adhd -e bash -ic adhd",
-    // "on-click": "foot --app-id=adhd bash -ic adhd",
+    "on-click": "foot --app-id=adhd bash -ic adhd",
+    //"on-click": "alacritty --class=adhd -e bash -ic adhd",
     // "tooltip-format": "<tt>{calendar}</tt>",
     // "calendar": {
     //   "mode": "year",

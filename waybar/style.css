@@ -1,7 +1,7 @@
 window#waybar {
-    background-color: #323232;
+    background-color: rgba(0, 0, 0, 0.75);
     color: #ffffff;
-    font-family: monospace;
+    font-family: Lilex Nerd Font;
     font-size: 16px;
 }
 
@@ -23,26 +23,25 @@ window#waybar {
 #taskbar button.maximized,
 #taskbar button.minimized,
 #taskbar button.fullscreen {
-    border: none;
+    box-shadow: none;
+    text-shadow: none;
+    background: none;
+    transition: none;
     padding: 0 8px;
-    border-radius: 0;
+    border-radius: 4;
+    color: #ffffff;
+    border: 1px solid transparent;
 }
 
+#workspaces button:hover,
+#taskbar button:hover,
 #workspaces button.focused,
 #workspaces button.active,
 #taskbar button.active {
-    color: #ffffff;
-    background-color: #285577;
+    border-color: #ffffff;
 }
 
 #workspaces button.urgent,
 #taskbar button.urgent {
-    color: #ffffff;
     background-color: #900000;
-}
-
-#workspaces button:hover,
-#taskbar button:hover {
-    color: #285577;
-    background-color: #ffffff;
 }

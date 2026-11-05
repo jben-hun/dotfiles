@@ -261,7 +261,7 @@ exec firewall-applet
 exec deluge-gtk
 exec blueman-applet
 exec wlsunset -S 8:00 -s 22:00 -t 2500 -T 6500
-exec gnome-keyring-daemon --start --components=secrets
+# exec gnome-keyring-daemon --start --components=secrets
 # exec /usr/lib/polkit-kde-authentication-agent-1
 # arch
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
@@ -270,7 +270,7 @@ exec /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
 # exec dbus-update-activation-environment --all
 # exec systemctl --user import-environment
 exec dbus-update-activation-environment --systemd --all
-exec cliphist wipe
+exec sh -c 'cliphist wipe && cliphist compact'
 exec wl-paste --watch cliphist store
 # exec kanshi
 # exec_always kanshictl reload
@@ -311,18 +311,23 @@ bindsym $mod+Shift+D exec cliphist list | fuzzel --dmenu | cliphist decode | wl-
 # bindsym $mod+t exec wlapse
 bindsym $mod+Shift+e exec swaynag \
     --font 'Lilex Nerd Font 11' \
-    --background 323232 \
-    --button-background 285577 \
+    --background 000000c0 \
+    --button-background 000000c0 \
     --text ffffff \
     --button-text ffffff \
-    --border 4C7899 \
-    --border-bottom 285577 \
-    --details-background 323232 \
+    --border 808080 \
+    --border-bottom 000000c0 \
     -m 'logout...' \
-    -Z 'exit' 'swaymsg exit' \
-    -Z 'lock' 'swaylock -f -c 222222' \
     -Z 'reboot' 'systemctl reboot' \
     -Z 'poweroff' 'systemctl poweroff' \
+    -Z 'exit' 'swaymsg exit' \
     -Z 'hibernate' 'systemctl hibernate' \
     -Z 'hybrid-sleep' 'systemctl hybrid-sleep' \
-    -Z 'suspend' 'systemctl suspend'
+    -Z 'suspend' 'systemctl suspend' \
+    -Z 'lock' 'swaylock -f -c 202020'
+
+# #                       brd       bg          txt        ind          chldbrd
+# client.focused          #4c7899   #285577     #ffffff    #2e9ef4      #285577
+# client.focused_inactive #333333   #5f676a     #ffffff    #484e50      #5f676a
+# client.unfocused        #333333   #222222     #888888    #292d2e      #222222
+# client.urgent           #2f343a   #900000     #ffffff    #900000      #900000

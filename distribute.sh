@@ -42,6 +42,10 @@ cp -r labwc ~/.config
 rm -rf ~/.config/kanshi
 cp -r kanshi ~/.config
 
+# mako
+rm -rf ~/.config/mako
+cp -r mako ~/.config
+
 # uair
 # rm -rf ~/.config/uair
 # cp -r uair ~/.config

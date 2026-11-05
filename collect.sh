@@ -40,6 +40,10 @@ cp -r ~/.config/labwc .
 rm -rf kanshi
 cp -r ~/.config/kanshi .
 
+# mako
+rm -rf mako
+cp -r ~/.config/mako .
+
 # uair
 # rm -rf uair
 # cp -r ~/.config/uair .

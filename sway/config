@@ -311,13 +311,23 @@ bindsym $mod+Shift+D exec cliphist list | fuzzel --dmenu | cliphist decode | wl-
 # bindsym $mod+q kill
 # bindsym $mod+t exec wlapse
 bindsym $mod+Shift+e exec swaynag \
+    -y overlay \
     --font 'Lilex Nerd Font 11' \
     --background 000000c0 \
+    --border 808080 \
+    --border-bottom 808080 \
     --button-background 000000c0 \
     --text ffffff \
     --button-text ffffff \
-    --border 808080 \
-    --border-bottom 000000c0 \
+    --border-bottom-size 2 \
+    --message-padding 5 \
+    --details-border-size 0 \
+    --details-background ffffff \
+    --button-border-size 2 \
+    --button-gap 0 \
+    --button-dismiss-gap 0 \
+    --button-margin-right 1 \
+    --button-padding 5 \
     -m 'logout...' \
     -Z 'reboot' 'systemctl reboot' \
     -Z 'poweroff' 'systemctl poweroff' \

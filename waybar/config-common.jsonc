@@ -1,39 +1,12 @@
 {
   "layer": "top",
   "position": "bottom",
-  "height": 24,
+  "height": 25,
 
   "modules-right": ["tray", "battery", "pulseaudio", "custom/pomo", "clock"],
 
-  // "sway/workspaces": {
-  //   "enable-bar-scroll": true,
-  //   "disable-scroll-wraparound": true,
-  // },
-
-  // "sway/mode": {},
-
-  "ext/workspaces": {
-    "format": "{name}",
-    "sort-by-number": true,
-    "on-click": "activate",
-  },
-
-  // "sway/window": {
-  //   "format": "{app_id}: {title} ({shell})",
-  //   "rewrite": {
-  //     "^:  \\(\\)$": "",
-  //   },
-  // },
-
-  "wlr/taskbar": {
-    "format": "{icon} {name}",
-    "on-click": "activate",
-    "tooltip-format": "{app_id}: {title}",
-    "icon-theme": "Papirus-Dark",
-  },
-
   "tray": {
-    "icon-size": 24,
+    "icon-size": 25,
     "show-passive-items": true,
   },
 
@@ -87,8 +60,8 @@
     "interval": 1,
     "format": "{:%Y-%m-%d %a %H:%M:%S}",
     "tooltip": false,
-    "on-click": "foot --app-id=adhd bash -ic adhd",
-    //"on-click": "alacritty --class=adhd -e bash -ic adhd",
+    // "on-click": "foot --app-id=adhd bash -ic adhd",
+    "on-click": "alacritty --class=adhd -e bash -ic adhd",
     // "tooltip-format": "<tt>{calendar}</tt>",
     // "calendar": {
     //   "mode": "year",

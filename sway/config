@@ -252,6 +252,8 @@ input * {
 output * max_render_time off
 output * bg ~/.local/share/backgrounds/background fill
 
+setenv QT_QPA_PLATFORMTHEME qt5ct:qt6ct
+
 exec swayidle -w \
     timeout 900 'swaymsg "output * power off"' \
     resume 'swaymsg "output * power on"' \
@@ -282,8 +284,10 @@ set $menu fuzzel
 
 seat * xcursor_theme Bibata-Original-Classic 25
 
-default_border pixel 4
-default_floating_border normal 4
+gaps inner 6
+gaps outer -6
+default_border pixel 6
+default_floating_border normal 6
 # workspace_layout stacking
 # for_window [tiling] border pixel 8
 # for_window [floating] border normal 8

@@ -295,14 +295,13 @@ hide_edge_borders both
 # workspace_auto_back_and_forth yes
 focus_wrapping no
 
-for_window [app_id="brave"] move container to workspace number 1; workspace number 1
-for_window [app_id="edge"] move container to workspace number 1; workspace number 1
-for_window [app_id="firefox"] move container to workspace number 1; workspace number 1
-for_window [app_id="zed"] move container to workspace number 2; workspace number 2
-for_window [app_id="adhd"] fullscreen enable
+for_window [class="Microsoft-edge"] move container to workspace number 1
+for_window [app_id="firefox"] move container to workspace number 1
+for_window [app_id="zed"] move container to workspace number 2
+for_window [app_id="adhd"] floating enable; fullscreen enable
 
-bindsym $mod+Shift+t exec /home/jben/.local/bin/swaytiles menu --launcher fuzzel
-bindsym $mod+m exec /home/jben/.local/bin/swaytiles swap
+bindsym $mod+Shift+t exec ${HOME}/.local/bin/swaytiles menu --launcher fuzzel
+bindsym $mod+m exec ${HOME}/.local/bin/swaytiles swap
 # bindsym $mod+Return exec foot bash -ic mc
 # bindsym $mod+Shift+Return exec foot bash -ic sudomc
 bindsym $mod+Return exec alacritty
@@ -333,15 +332,15 @@ bindsym $mod+Shift+e exec swaynag \
     --button-margin-right 1 \
     --button-padding 5 \
     -m 'logout...' \
-    -Z 'reboot' 'systemctl reboot' \
-    -Z 'poweroff' 'systemctl poweroff' \
-    -Z 'exit' 'swaymsg exit' \
-    -Z 'hibernate' 'systemctl hibernate' \
-    -Z 'hybrid-sleep' 'systemctl hybrid-sleep' \
+    -Z 'lock' 'swaylock -f -c 202020' \
     -Z 'suspend' 'systemctl suspend' \
-    -Z 'lock' 'swaylock -f -c 202020'
+    -Z 'hybrid-sleep' 'systemctl hybrid-sleep' \
+    -Z 'hibernate' 'systemctl hibernate' \
+    -Z 'exit' 'swaymsg exit' \
+    -Z 'poweroff' 'systemctl poweroff' \
+    -Z 'reboot' 'systemctl reboot'
 
-# #                       brd       bg          txt        ind          chldbrd
+#                       brd       bg          txt        ind          chldbrd
 # client.focused          #4c7899   #285577     #ffffff    #2e9ef4      #285577
 # client.focused_inactive #333333   #5f676a     #ffffff    #484e50      #5f676a
 # client.unfocused        #333333   #222222     #888888    #292d2e      #222222

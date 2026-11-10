@@ -252,8 +252,6 @@ input * {
 output * max_render_time off
 output * bg ~/.local/share/backgrounds/background fill
 
-setenv QT_QPA_PLATFORMTHEME qt5ct:qt6ct
-
 exec swayidle -w \
     timeout 900 'swaymsg "output * power off"' \
     resume 'swaymsg "output * power on"' \
@@ -297,12 +295,14 @@ hide_edge_borders both
 # workspace_auto_back_and_forth yes
 focus_wrapping no
 
-# for_window [app_id="brave"] border none
-# for_window [app_id="edge"] border none
-# for_window [app_id="firefox"] border none
-# for_window [app_id="zed"] border none
+for_window [app_id="brave"] move container to workspace number 1; workspace number 1
+for_window [app_id="edge"] move container to workspace number 1; workspace number 1
+for_window [app_id="firefox"] move container to workspace number 1; workspace number 1
+for_window [app_id="zed"] move container to workspace number 2; workspace number 2
 for_window [app_id="adhd"] fullscreen enable
 
+bindsym $mod+Shift+t exec /home/jben/.local/bin/swaytiles menu --launcher fuzzel
+bindsym $mod+m exec /home/jben/.local/bin/swaytiles swap
 # bindsym $mod+Return exec foot bash -ic mc
 # bindsym $mod+Shift+Return exec foot bash -ic sudomc
 bindsym $mod+Return exec alacritty
@@ -329,7 +329,7 @@ bindsym $mod+Shift+e exec swaynag \
     --details-background ffffff \
     --button-border-size 2 \
     --button-gap 0 \
-    --button-dismiss-gap 0 \
+    --button-dismiss-gap 50 \
     --button-margin-right 1 \
     --button-padding 5 \
     -m 'logout...' \

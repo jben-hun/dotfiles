@@ -70,7 +70,9 @@ adhd() {
     printf '\n%s\n\n' "$timestamp"
 
     read -r -e -p "Intent: " intent || return
+    [[ -z $intent ]] && return 0
     read -r -e -p "Exit: " exit_point || return
+    [[ -z $exit_point ]] && return 0
 
     intent=${intent//\"/\"\"}
     exit_point=${exit_point//\"/\"\"}

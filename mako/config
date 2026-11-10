@@ -129,7 +129,7 @@ icon-path=""
 icon-location=left
 
 # Sets icon corner radius to px pixels.
-icon-border-radius=0
+# icon-border-radius=0
 
 # If 1, enable Pango markup. If 0, disable Pango markup. If enabled, Pango
 # markup will be interpreted in your format specifier and in the body of

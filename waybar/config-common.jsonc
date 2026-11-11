@@ -26,11 +26,11 @@
   "pulseaudio": {
     "format": "vol:{volume:3}%",
     "format-muted": "vol:---%",
-    "on-click-middle": "pavucontrol",
     "on-click": "wpctl set-mute @DEFAULT_SINK@ toggle && canberra-gtk-play -i audio-volume-change",
     "on-scroll-down": "wpctl set-volume @DEFAULT_SINK@ 5%- && canberra-gtk-play -i audio-volume-change",
     "on-scroll-up": "wpctl set-volume @DEFAULT_SINK@ 5%+ --limit 1.0 && canberra-gtk-play -i audio-volume-change",
     // "on-click-right": "wpctl set-mute @DEFAULT_SOURCE@ toggle && canberra-gtk-play -i audio-volume-change",
+    "on-click-right": "pavucontrol",
   },
 
   // "custom/timebox": {

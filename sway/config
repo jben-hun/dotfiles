@@ -299,6 +299,7 @@ for_window [class="Microsoft-edge"] move container to workspace number 1
 for_window [app_id="firefox"] move container to workspace number 1
 for_window [app_id="zed"] move container to workspace number 2
 for_window [app_id="adhd"] floating enable; fullscreen enable
+for_window [app_id="org.pulseaudio.pavucontrol"] floating enable
 
 bindsym $mod+Shift+t exec ${HOME}/.local/bin/swaytiles menu --launcher fuzzel
 bindsym $mod+m exec ${HOME}/.local/bin/swaytiles swap

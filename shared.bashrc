@@ -7,19 +7,26 @@
 # xdg-mime default celluloid.desktop video/mp4 video/x-matroska video/webm video/quicktime video/x-flv video/3gpp audio/mpeg audio/ogg audio/mp4 audio/x-wav
 # xdg-mime default zed.desktop text/plain text/markdown text/x-python text/x-shellscript text/javascript text/css application/json application/xml
 
-# ~/.config/systemd/user/gtfo.service
-# [Service]
-# Type=oneshot
-# # ExecStart=/bin/sh -c   'notify-send "t-30s"; sleep 30; swaylock -f -c 202020'
-# ExecStart=/bin/sh -c 'notify-send "t-30s"; sleep 30; swaymsg exec "swaylock -f -c 202020"'
-
-# ~/.config/systemd/user/gtfo.timer
+# # ~/.config/systemd/user/gtfo.timer
 # [Timer]
 # # OnCalendar=*-*-* 17..23:00/5:00
-# OnCalendar=*-*-*   22..23:00/5:00
-#
+# OnCalendar=*-*-* 22..23:00/5:00
 # [Install]
 # WantedBy=timers.target
+# # ~/.config/systemd/user/gtfo.service
+# [Service]
+# Type=oneshot
+# # # ExecStart=/bin/sh -c 'notify-send "⏳–30s"; sleep 30; swaylock -f -c 202020'
+# # ExecStart=/bin/sh -c 'notify-send "⏳–30s"; sleep 30; swaymsg exec "swaylock -f -c 202020"'
+# # ~/.config/systemd/user/beep.timer
+# [Timer]
+# OnCalendar=hourly
+# [Install]
+# WantedBy=timers.target
+# # ~/.config/systemd/user/beep.service
+# [Service]
+# Type=oneshot
+# ExecStart=sh -c 'notify-send "⌚$(date +%%H:%%M)"'
 
 # https://github.com/sertacartun/swaytiles/
 # ~/.local/lib/swaytiles/swaytiles.py

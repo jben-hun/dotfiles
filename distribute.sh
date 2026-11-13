@@ -5,10 +5,9 @@ mkdir -p ~/.config
 # bash
 cp shared.bashrc ~/.shared.bashrc
 
-# scripts
-mkdir -p ~/bin
-cp nohup-open ~/bin
-cp pomo ~/bin
+# shared-bin
+rm -rf ~/shared-bin
+cp -r shared-bin ~
 
 # lxqt
 # rm -rf ~/.config/lxqt

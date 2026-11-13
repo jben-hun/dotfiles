@@ -3,9 +3,9 @@
 # bash
 cp ~/.shared.bashrc shared.bashrc
 
-# scripts
-cp ~/bin/nohup-open .
-cp ~/bin/pomo .
+# shared-bin
+rm -rf shared-bin
+cp -r ~/shared-bin .
 
 # lxqt
 # rm -rf lxqt

@@ -9,6 +9,13 @@ cp shared.bashrc ~/.shared.bashrc
 rm -rf ~/shared-bin
 cp -r shared-bin ~
 
+# systemd units
+mkdir -p ~/.config/systemd/user
+cp gtfo.timer ~/.config/systemd/user
+cp gtfo.service ~/.config/systemd/user
+cp beep.timer ~/.config/systemd/user
+cp beep.service ~/.config/systemd/user
+
 # lxqt
 # rm -rf ~/.config/lxqt
 # cp -r lxqt ~/.config

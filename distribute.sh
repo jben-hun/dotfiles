@@ -30,12 +30,12 @@ cp -r pcmanfm ~/.config
 # cp -r i3 ~/.config
 
 # sway
-rm -rf ~/.config/sway
-cp -r sway ~/.config
+# rm -rf ~/.config/sway
+# cp -r sway ~/.config
 
 # labwc
-rm -rf ~/.config/labwc
-cp -r labwc ~/.config
+# rm -rf ~/.config/labwc
+# cp -r labwc ~/.config
 
 # mangowm
 rm -rf ~/.config/mango
@@ -98,9 +98,9 @@ cp -r swappy ~/.config
 rm -rf ~/.config/zed
 cp -r zed ~/.config
 
-# portals
-mkdir -p ~/.config/xdg-desktop-portal
-cp sway-portals.conf ~/.config/xdg-desktop-portal
+# sway-portals
+# mkdir -p ~/.config/xdg-desktop-portal
+# cp sway-portals.conf ~/.config/xdg-desktop-portal
 
 # qt
 # mkdir -p ~/.config/environment.d

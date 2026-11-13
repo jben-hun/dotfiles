@@ -1,0 +1,6 @@
+[Timer]
+OnCalendar=*-*-* %i..23:00/5:00
+Unit=gtfo.service
+
+[Install]
+WantedBy=timers.target

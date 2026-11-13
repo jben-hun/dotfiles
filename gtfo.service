@@ -1,0 +1,5 @@
+[Service]
+Type=oneshot
+# ExecStart=/bin/sh -c 'notify-send "⏳-30s"; sleep 30; swaymsg exec "swaylock -f -c 202020"'
+KillMode=process
+ExecStart=/bin/sh -c 'notify-send "⏳-30s"; sleep 30; swaylock -f -c 202020'

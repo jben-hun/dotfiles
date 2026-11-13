@@ -43,7 +43,8 @@
     "format-DW": "DW",
     "format-F": "FA",
     "format-VF": "VF",
-    "on-click": "mmsg dispatch switch_layout"
+    "on-click": "mmsg dispatch toggleoverview,1",
+    "on-click-right": "mmsg dispatch switch_layout"
   },
 
   "mango/language": {

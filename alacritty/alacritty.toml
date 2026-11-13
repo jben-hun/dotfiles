@@ -5,7 +5,7 @@ italic = { family = "Lilex Nerd Font", style = "Italic" }
 bold_italic = { family = "Lilex Nerd Font", style = "Bold Italic" }
 
 [window]
-opacity = 0.8
+opacity = 0.75
 
 [colors.primary]
-background = "#000000"
+background = "#202020"

@@ -38,6 +38,10 @@ cp -r sway ~/.config
 rm -rf ~/.config/labwc
 cp -r labwc ~/.config
 
+# mangowm
+rm -rf ~/.config/mango
+cp -r mango ~/.config
+
 # kanshi
 rm -rf ~/.config/kanshi
 cp -r kanshi ~/.config

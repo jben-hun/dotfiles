@@ -49,6 +49,10 @@ cp -r kanshi ~/.config
 rm -rf ~/.config/mako
 cp -r mako ~/.config
 
+# gammastep
+rm -rf ~/.config/gammastep
+cp -r gammastep ~/.config
+
 # uair
 # rm -rf ~/.config/uair
 # cp -r uair ~/.config

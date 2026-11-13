@@ -1,0 +1,20 @@
+{
+  "include": ["$HOME/.config/waybar/config-common.jsonc"],
+
+  "modules-left": ["sway/workspaces", "sway/mode"],
+  "modules-center": ["sway/window"],
+
+  "sway/workspaces": {
+    "enable-bar-scroll": true,
+    "disable-scroll-wraparound": true,
+  },
+
+  "sway/mode": {},
+
+  "sway/window": {
+    "format": "{app_id}: {title} ({shell})",
+    "rewrite": {
+      "^:  \\(\\)$": "",
+    },
+  },
+}

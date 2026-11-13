@@ -1,20 +1,37 @@
 {
   "include": ["$HOME/.config/waybar/config-common.jsonc"],
 
-  "modules-left": ["sway/workspaces", "sway/mode"],
-  "modules-center": ["sway/window"],
+  "modules-left": ["mango/workspaces", "mango/layout"],
+  "modules-center": ["mango/window"],
 
-  "sway/workspaces": {
-    "enable-bar-scroll": true,
-    "disable-scroll-wraparound": true,
+  "mango/workspaces": {
+    "hide-empty": true,
+    "on-click": "activate",
   },
 
-  "sway/mode": {},
+  "mango/window": {
+    "format": "{app_id}: {title}",
+    "icon-size": 20,
+  },
 
-  "sway/window": {
-    "format": "{app_id}: {title} ({shell})",
-    "rewrite": {
-      "^:  \\(\\)$": "",
-    },
+  "mango/layout": {
+    "format-T": "tile",
+    "format-S": "scroller",
+    "format-M": "monocle",
+    "format-G": "grid",
+    "format-K": "deck",
+    "format-CT": "center_tile",
+    "format-VT": "vertical_tile",
+    "format-RT": "right_tile",
+    "format-VS": "vertical_scroller",
+    "format-VG": "vertical_grid",
+    "format-VK": "vertical_deck",
+    "format-DW": "dwindle",
+    "format-F": "fair",
+    "format-VF": "vertical_fair"
+  },
+
+  "mango/language": {
+    "format": "{short}",
   },
 }

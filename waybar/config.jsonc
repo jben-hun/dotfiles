@@ -1,7 +1,7 @@
 {
   "include": ["$HOME/.config/waybar/config-common.jsonc"],
 
-  "modules-left": ["mango/workspaces", "mango/layout"],
+  "modules-left": ["mango/layout", "mango/workspaces"],
   "modules-center": ["mango/window"],
 
   "mango/workspaces": {
@@ -15,20 +15,35 @@
   },
 
   "mango/layout": {
-    "format-T": "tile",
-    "format-S": "scroller",
-    "format-M": "monocle",
-    "format-G": "grid",
-    "format-K": "deck",
-    "format-CT": "center_tile",
-    "format-VT": "vertical_tile",
-    "format-RT": "right_tile",
-    "format-VS": "vertical_scroller",
-    "format-VG": "vertical_grid",
-    "format-VK": "vertical_deck",
-    "format-DW": "dwindle",
-    "format-F": "fair",
-    "format-VF": "vertical_fair"
+    // "format-T": "tile",
+    // "format-S": "scroller",
+    // "format-M": "monocle",
+    // "format-G": "grid",
+    // "format-K": "deck",
+    // "format-CT": "center_tile",
+    // "format-VT": "vertical_tile",
+    // "format-RT": "right_tile",
+    // "format-VS": "vertical_scroller",
+    // "format-VG": "vertical_grid",
+    // "format-VK": "vertical_deck",
+    // "format-DW": "dwindle",
+    // "format-F": "fair",
+    // "format-VF": "vertical_fair"
+    "format-T": "TI",
+    "format-S": "SC",
+    "format-M": "MO",
+    "format-G": "GR",
+    "format-K": "DE",
+    "format-CT": "CT",
+    "format-VT": "VT",
+    "format-RT": "RT",
+    "format-VS": "VS",
+    "format-VG": "VG",
+    "format-VK": "VD",
+    "format-DW": "DW",
+    "format-F": "FA",
+    "format-VF": "VF",
+    "on-click": "mmsg dispatch switch_layout"
   },
 
   "mango/language": {

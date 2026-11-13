@@ -33,7 +33,7 @@
 # - command = ["fuzzel", "--dmenu", "--index", "--width", "45", "--lines", str(count), "--line-height", "40", "--prompt", "layout: "]
 # + command = ["fuzzel", "--dmenu", "--index", "--width", "65", "--lines", str(count), "--line-height", "40", "--prompt", "layout: "]
 
-export PATH="$PATH:$HOME/bin"
+export PATH="$PATH:$HOME/bin:$HOME/shared-bin"
 
 eval "$(zoxide init bash)"
 eval "$(starship init bash)"
@@ -107,7 +107,7 @@ alias tree='tree -C'
 alias t='tree'
 alias tt='tree -a'
 
-export MC_XDG_OPEN=~/bin/nohup-open
+export MC_XDG_OPEN=~/shared-bin/nohup-open
 alias mc='MC_SKIN=modarin256-defbg . /usr/lib/mc/mc-wrapper.sh'
 alias sudomc='sudo -E bash -c "MC_SKIN=modarin256root-defbg . /usr/lib/mc/mc-wrapper.sh"'
 

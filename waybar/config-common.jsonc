@@ -1,7 +1,6 @@
 {
   "layer": "top",
   "position": "bottom",
-  "height": 25,
 
   "modules-right": ["tray", "battery", "pulseaudio", "custom/pomo", "clock"],
 
@@ -50,9 +49,9 @@
   // },
 
   "custom/pomo": {
-    "exec": "$HOME/bin/pomo",
+    "exec": "$HOME/shared-bin/pomo",
     "interval": 1,
-    "on-click": "$HOME/bin/pomo toggle",
+    "on-click": "$HOME/shared-bin/pomo toggle",
     "tooltip": false,
   },
 

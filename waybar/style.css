@@ -37,6 +37,7 @@ window#waybar {
     padding-right: 8px;
 }
 
+#layout,
 #workspaces button,
 #taskbar button,
 #taskbar button.maximized,
@@ -55,6 +56,10 @@ window#waybar {
 }
 #workspaces button:hover,
 #taskbar button:hover {
+    border-color: #ffffff;
+}
+
+#layout{
     border-color: #808080;
 }
 
@@ -62,7 +67,7 @@ window#waybar {
 #workspaces button.active,
 #taskbar button.active {
     color: #ffffff;
-    border-color: #808080;
+    border-color: #ffffff;
 }
 
 #workspaces button.urgent,

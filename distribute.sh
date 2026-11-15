@@ -77,8 +77,8 @@ rm -rf ~/.config/waybar
 cp -r waybar ~/.config
 
 # niri
-# rm -rf ~/.config/niri
-# cp -r niri ~/.config
+rm -rf ~/.config/niri
+cp -r niri ~/.config
 
 # polybar
 # rm -rf ~/.config/polybar

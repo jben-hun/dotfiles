@@ -45,8 +45,8 @@ cp -r pcmanfm ~/.config
 # cp -r labwc ~/.config
 
 # mangowm
-rm -rf ~/.config/mango
-cp -r mango ~/.config
+# rm -rf ~/.config/mango
+# cp -r mango ~/.config
 
 # kanshi
 rm -rf ~/.config/kanshi
@@ -93,8 +93,8 @@ rm -rf ~/.config/alacritty
 cp -r alacritty ~/.config
 
 # swappy
-rm -rf ~/.config/swappy
-cp -r swappy ~/.config
+# rm -rf ~/.config/swappy
+# cp -r swappy ~/.config
 
 # vscode
 # mkdir -p ~/.config/Code/User

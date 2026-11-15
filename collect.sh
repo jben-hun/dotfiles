@@ -43,8 +43,8 @@ cp -r ~/.config/pcmanfm .
 # cp -r ~/.config/labwc .
 
 # mangowm
-rm -rf mango
-cp -r ~/.config/mango .
+# rm -rf mango
+# cp -r ~/.config/mango .
 
 # kanshi
 rm -rf kanshi
@@ -91,8 +91,8 @@ rm -rf alacritty
 cp -r ~/.config/alacritty .
 
 # swappy
-rm -rf swappy
-cp -r ~/.config/swappy .
+# rm -rf swappy
+# cp -r ~/.config/swappy .
 
 # vscode
 # cp ~/.config/Code/User/settings.json    vscode_settings.json

@@ -1,6 +1,7 @@
 {
   "layer": "top",
   "position": "bottom",
+  // "height": 29,
 
   "modules-right": ["tray", "battery", "pulseaudio", "custom/pomo", "clock"],
 

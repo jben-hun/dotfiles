@@ -11,7 +11,7 @@ cp -r shared-bin ~
 
 # systemd units
 mkdir -p ~/.config/systemd/user
-cp gtfo.timer ~/.config/systemd/user
+cp gtfo@.timer ~/.config/systemd/user
 cp gtfo.service ~/.config/systemd/user
 cp beep.timer ~/.config/systemd/user
 cp beep.service ~/.config/systemd/user

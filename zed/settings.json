@@ -82,7 +82,7 @@
     },
     "flexible": false,
     "dock": "left",
-    "default_profile": "write",
+    "default_profile": "ask",
     "default_model": {
       "provider": "openai",
       "model": "gpt-5.6-terra",
@@ -132,4 +132,6 @@
       "GIT_EDITOR": "zed --wait",
     },
   },
+  "window_decorations": "server",
+  "restore_on_startup": "launchpad"
 }

@@ -141,8 +141,8 @@ layout {
         // Proportion sets the width as a fraction of the output width, taking gaps into account.
         // For example, you can perfectly fit four windows sized "proportion 0.25" on an output.
         // The default preset widths are 1/3, 1/2 and 2/3 of the output.
-        proportion 0.33333
-        // proportion 0.34
+        // proportion 0.33333
+        // proportion 0.3
         proportion 0.5
         // proportion 0.66667
         // proportion 0.66
@@ -176,7 +176,7 @@ layout {
         // off
 
         // How many logical pixels the ring extends out from the windows.
-        width 4
+        width 6
 
         // Colors can be set in a variety of ways:
         // - CSS named colors: "red"
@@ -212,6 +212,8 @@ layout {
     tab-indicator {
         place-within-column
         length total-proportion=1.0
+
+        width 6
     }
 
     // You can also add a border. It's similar to the focus ring, but always visible.
@@ -344,6 +346,9 @@ animations {
 
     // Slow down all animations by this factor. Values below 1 speed them up instead.
     // slowdown 3.0
+    slowdown 0.5
+
+    // window-resize { off; }
 }
 
 // Window rules let you adjust behavior for individual windows.
@@ -454,7 +459,7 @@ binds {
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     // Mod+T hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
     Mod+Return hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
-    Mod+Ctrl+V hotkey-overlay-title="Open a History manager: cliphist" { spawn-sh "cliphist list | fuzzel --dmenu | cliphist decode | wl-copy"; }
+    Mod+V hotkey-overlay-title="Open a History manager: cliphist" { spawn-sh "cliphist list | fuzzel --dmenu | cliphist decode | wl-copy"; }
     // Mod+P hotkey-overlay-title="Open a File Manager: pcmanfm" { spawn "pcmanfm"; }
     Mod+SHIFT+Return hotkey-overlay-title="Open a File Manager: pcmanfm" { spawn "pcmanfm"; }
     Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
@@ -624,24 +629,24 @@ binds {
     Mod+7 { focus-workspace 7; }
     Mod+8 { focus-workspace 8; }
     Mod+9 { focus-workspace 9; }
-    Mod+SHIFT+1 { move-column-to-workspace 1; }
-    Mod+SHIFT+2 { move-column-to-workspace 2; }
-    Mod+SHIFT+3 { move-column-to-workspace 3; }
-    Mod+SHIFT+4 { move-column-to-workspace 4; }
-    Mod+SHIFT+5 { move-column-to-workspace 5; }
-    Mod+SHIFT+6 { move-column-to-workspace 6; }
-    Mod+SHIFT+7 { move-column-to-workspace 7; }
-    Mod+SHIFT+8 { move-column-to-workspace 8; }
-    Mod+SHIFT+9 { move-column-to-workspace 9; }
-    Mod+Ctrl+1 { move-window-to-workspace 1; }
-    Mod+Ctrl+2 { move-window-to-workspace 2; }
-    Mod+Ctrl+3 { move-window-to-workspace 3; }
-    Mod+Ctrl+4 { move-window-to-workspace 4; }
-    Mod+Ctrl+5 { move-window-to-workspace 5; }
-    Mod+Ctrl+6 { move-window-to-workspace 6; }
-    Mod+Ctrl+7 { move-window-to-workspace 7; }
-    Mod+Ctrl+8 { move-window-to-workspace 8; }
-    Mod+Ctrl+9 { move-window-to-workspace 9; }
+    Mod+SHIFT+1 { move-column-to-workspace focus=false 1; }
+    Mod+SHIFT+2 { move-column-to-workspace focus=false 2; }
+    Mod+SHIFT+3 { move-column-to-workspace focus=false 3; }
+    Mod+SHIFT+4 { move-column-to-workspace focus=false 4; }
+    Mod+SHIFT+5 { move-column-to-workspace focus=false 5; }
+    Mod+SHIFT+6 { move-column-to-workspace focus=false 6; }
+    Mod+SHIFT+7 { move-column-to-workspace focus=false 7; }
+    Mod+SHIFT+8 { move-column-to-workspace focus=false 8; }
+    Mod+SHIFT+9 { move-column-to-workspace focus=false 9; }
+    Mod+Ctrl+1 { move-window-to-workspace focus=false 1; }
+    Mod+Ctrl+2 { move-window-to-workspace focus=false 2; }
+    Mod+Ctrl+3 { move-window-to-workspace focus=false 3; }
+    Mod+Ctrl+4 { move-window-to-workspace focus=false 4; }
+    Mod+Ctrl+5 { move-window-to-workspace focus=false 5; }
+    Mod+Ctrl+6 { move-window-to-workspace focus=false 6; }
+    Mod+Ctrl+7 { move-window-to-workspace focus=false 7; }
+    Mod+Ctrl+8 { move-window-to-workspace focus=false 8; }
+    Mod+Ctrl+9 { move-window-to-workspace focus=false 9; }
 
     // Alternatively, there are commands to move just a single window:
     // Mod+Ctrl+1 { move-window-to-workspace 1; }
@@ -670,6 +675,7 @@ binds {
     Mod+R { switch-preset-column-width; }
     // Cycling through the presets in reverse order is also possible.
     // Mod+Shift+R { switch-preset-column-width-back; }
+    Mod+Shift+R { reset-window-height; }
 
     // Mod+Ctrl+Shift+R { switch-preset-window-height; }
     // Mod+Ctrl+R { reset-window-height; }
@@ -688,7 +694,6 @@ binds {
     // Mod+Ctrl+F { expand-column-to-available-width; }
     Mod+Ctrl+F { toggle-windowed-fullscreen; }
     Mod+T { expand-column-to-available-width; }
-    Mod+SHIFT+T { reset-window-height; }
 
     // Mod+C { center-column; }
 
@@ -711,8 +716,10 @@ binds {
     // Mod+Shift+Equal { set-window-height "+10%"; }
 
     // Move the focused window between the floating and the tiling layout.
-    Mod+V       { toggle-window-floating; }
-    Mod+Shift+V { switch-focus-between-floating-and-tiling; }
+    // Mod+V       { toggle-window-floating; }
+    // Mod+Shift+V { switch-focus-between-floating-and-tiling; }
+    Mod+Space       { toggle-window-floating; }
+    Mod+Shift+Space { switch-focus-between-floating-and-tiling; }
 
     // Toggle tabbed column display mode.
     // Windows in this column will appear as vertical tabs,
@@ -762,10 +769,20 @@ binds {
     }
     Mod+SHIFT+G {
         spawn "sh" "-c" r#"
-            niri msg action set-column-width 50%
-            niri msg action focus-column-left
-            niri msg action set-column-width 50%
+            niri msg action set-column-width 70%
             niri msg action focus-column-right
+            niri msg action set-column-width 30%
+            niri msg action focus-column-left
+        "#
+    }
+    Mod+P {
+        spawn "sh" "-c" r#"
+            niri msg action consume-or-expel-window-left
+            niri msg action consume-or-expel-window-left
+            niri msg action focus-window-up
+            niri msg action consume-or-expel-window-right
+            niri msg action consume-or-expel-window-right
+            niri msg action focus-column-left
         "#
     }
 }

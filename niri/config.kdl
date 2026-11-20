@@ -213,7 +213,8 @@ layout {
         place-within-column
         length total-proportion=1.0
 
-        width 6
+        width 12
+        gap 0
     }
 
     // You can also add a border. It's similar to the focus ring, but always visible.
@@ -465,7 +466,7 @@ binds {
     Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
     // Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
     Mod+Shift+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn-sh "swaylock -f -c 202020"; }
-    Mod+Shift+E hotkey-overlay-title="Leave..." { spawn "~/.config/niri/leave.sh"; }
+    Mod+L hotkey-overlay-title="Leave..." { spawn "~/.config/niri/leave.sh"; }
 
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument. It's passed verbatim to `sh -c`.
@@ -535,6 +536,9 @@ binds {
     Mod+End  { focus-column-last; }
     Mod+SHIFT+Home { move-column-to-first; }
     Mod+SHIFT+End  { move-column-to-last; }
+
+    Mod+Ctrl+Home { focus-window-top; }
+    Mod+Ctrl+End { focus-window-bottom; }
 
     // Mod+Shift+Left  { focus-monitor-left; }
     // Mod+Shift+Down  { focus-monitor-down; }
@@ -675,7 +679,6 @@ binds {
     Mod+R { switch-preset-column-width; }
     // Cycling through the presets in reverse order is also possible.
     // Mod+Shift+R { switch-preset-column-width-back; }
-    Mod+Shift+R { reset-window-height; }
 
     // Mod+Ctrl+Shift+R { switch-preset-window-height; }
     // Mod+Ctrl+R { reset-window-height; }
@@ -694,6 +697,7 @@ binds {
     // Mod+Ctrl+F { expand-column-to-available-width; }
     Mod+Ctrl+F { toggle-windowed-fullscreen; }
     Mod+T { expand-column-to-available-width; }
+    Mod+SHIFT+T { reset-window-height; }
 
     // Mod+C { center-column; }
 
@@ -760,29 +764,49 @@ binds {
     // Mod+Shift+P { power-off-monitors; }
 
     Mod+G {
-        spawn "sh" "-c" r#"
+        spawn-sh r#"
             niri msg action set-column-width 50%
             niri msg action focus-column-right
             niri msg action set-column-width 50%
             niri msg action focus-column-left
         "#
     }
-    Mod+SHIFT+G {
-        spawn "sh" "-c" r#"
+    // Mod+SHIFT+G {
+    //     spawn-sh r#"
+    //         niri msg action set-column-width 50%
+    //         niri msg action focus-column-left
+    //         niri msg action set-column-width 50%
+    //         niri msg action focus-column-right
+    //     "#
+    // }
+    Mod+E {
+        spawn-sh r#"
             niri msg action set-column-width 70%
             niri msg action focus-column-right
             niri msg action set-column-width 30%
             niri msg action focus-column-left
         "#
     }
-    Mod+P {
-        spawn "sh" "-c" r#"
-            niri msg action consume-or-expel-window-left
-            niri msg action consume-or-expel-window-left
-            niri msg action focus-window-up
-            niri msg action consume-or-expel-window-right
-            niri msg action consume-or-expel-window-right
-            niri msg action focus-column-left
-        "#
-    }
+    // Mod+SHIFT+E {
+    //     spawn-sh r#"
+    //         niri msg action set-column-width 70%
+    //         niri msg action focus-column-left
+    //         niri msg action set-column-width 30%
+    //         niri msg action focus-column-right
+    //     "#
+    // }
+    Mod+Alt+Left { swap-window-left; }
+    Mod+Alt+Right { swap-window-right; }
+    // Mod+SHIFT+R {
+    //     spawn-sh r#"
+    //         WS=$(niri msg -j focused-window | jq '.workspace_id')
+    //         COUNT=$(niri msg -j windows | jq "[.[] | select(.workspace_id == $WS)] | length")
+    //         niri msg action focus-column-first
+    //         for i in $(seq 1 "$COUNT"); do
+    //             niri msg action set-column-width 50%
+    //             niri msg action focus-column-right
+    //         done
+    //         niri msg action focus-column-first
+    //     "#
+    // }
 }

@@ -35,8 +35,8 @@ cp -r ~/.config/pcmanfm .
 # cp -r ~/.config/i3 .
 
 # sway
-# rm -rf sway
-# cp -r ~/.config/sway .
+rm -rf sway
+cp -r ~/.config/sway .
 
 # labwc
 # rm -rf labwc
@@ -91,8 +91,8 @@ rm -rf alacritty
 cp -r ~/.config/alacritty .
 
 # swappy
-# rm -rf swappy
-# cp -r ~/.config/swappy .
+rm -rf swappy
+cp -r ~/.config/swappy .
 
 # vscode
 # cp ~/.config/Code/User/settings.json    vscode_settings.json
@@ -103,7 +103,7 @@ rm -rf zed
 cp -r ~/.config/zed .
 
 # sway-portals
-# cp ~/.config/xdg-desktop-portal/sway-portals.conf sway-portals.conf
+cp ~/.config/xdg-desktop-portal/sway-portals.conf sway-portals.conf
 
 # qt
-# cp ~/.config/environment.d/10-qt.conf .
+cp ~/.config/environment.d/10-qt.conf .

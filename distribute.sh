@@ -37,9 +37,9 @@ cp -r pcmanfm ~/.config
 # cp -r i3 ~/.config
 
 # sway
-# rm -rf ~/.config/sway
-# cp -r sway ~/.config
-# rm ~/.config/sway/tearing
+rm -rf ~/.config/sway
+cp -r sway ~/.config
+rm ~/.config/sway/tearing
 
 # labwc
 # rm -rf ~/.config/labwc
@@ -94,8 +94,8 @@ rm -rf ~/.config/alacritty
 cp -r alacritty ~/.config
 
 # swappy
-# rm -rf ~/.config/swappy
-# cp -r swappy ~/.config
+rm -rf ~/.config/swappy
+cp -r swappy ~/.config
 
 # vscode
 # mkdir -p ~/.config/Code/User
@@ -107,9 +107,9 @@ rm -rf ~/.config/zed
 cp -r zed ~/.config
 
 # sway-portals
-# mkdir -p ~/.config/xdg-desktop-portal
-# cp sway-portals.conf ~/.config/xdg-desktop-portal
+mkdir -p ~/.config/xdg-desktop-portal
+cp sway-portals.conf ~/.config/xdg-desktop-portal
 
 # qt
-# mkdir -p ~/.config/environment.d
-# cp 10-qt.conf ~/.config/environment.d
+mkdir -p ~/.config/environment.d
+cp 10-qt.conf ~/.config/environment.d

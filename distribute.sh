@@ -39,6 +39,7 @@ cp -r pcmanfm ~/.config
 # sway
 # rm -rf ~/.config/sway
 # cp -r sway ~/.config
+# rm ~/.config/sway/tearing
 
 # labwc
 # rm -rf ~/.config/labwc

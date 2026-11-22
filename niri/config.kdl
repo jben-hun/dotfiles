@@ -441,6 +441,16 @@ blur {
     // saturation 1.5
 }
 
+gestures {
+    hot-corners {
+        // off
+        // top-left
+        // top-right
+        bottom-left
+        // bottom-right
+    }
+}
+
 binds {
     // Keys consist of modifiers separated by + signs, followed by an XKB key name
     // in the end. To find an XKB name for a particular key, you may use a program
@@ -501,7 +511,8 @@ binds {
     // Mod+O repeat=false { toggle-overview; }
     Mod+Tab repeat=false { toggle-overview; }
 
-    Mod+Q repeat=false { close-window; }
+    // Mod+Q repeat=false { close-window; }
+    Mod+Q { close-window; }
 
     Mod+Left  { focus-column-left; }
     Mod+Down  { focus-window-down; }
@@ -809,4 +820,6 @@ binds {
     //         niri msg action focus-column-first
     //     "#
     // }
+
+    Mod+Backspace { focus-workspace-previous; }
 }

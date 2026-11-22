@@ -1,3 +1,5 @@
+include ~/.config/sway/tearing
+
 # Default config for sway
 #
 # Copy this to ~/.config/sway/config and edit it to your liking.
@@ -9,10 +11,10 @@
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
 # Home row direction keys, like vim
-set $left h
-set $down j
-set $up k
-set $right l
+# set $left h
+# set $down j
+# set $up k
+# set $right l
 # Your preferred terminal emulator
 # set $term foot
 # Your preferred application launcher
@@ -68,7 +70,7 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
     # bindsym $mod+Return exec $term
 
     # Kill focused window
-    bindsym $mod+Shift+q kill
+    # bindsym $mod+Shift+q kill
 
     # Start your launcher
     bindsym $mod+d exec $menu
@@ -89,10 +91,10 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 # Moving around:
 #
     # Move your focus around
-    bindsym $mod+$left focus left
-    bindsym $mod+$down focus down
-    bindsym $mod+$up focus up
-    bindsym $mod+$right focus right
+    # bindsym $mod+$left focus left
+    # bindsym $mod+$down focus down
+    # bindsym $mod+$up focus up
+    # bindsym $mod+$right focus right
     # Or use $mod+[up|down|left|right]
     bindsym $mod+Left focus left
     bindsym $mod+Down focus down
@@ -100,10 +102,10 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
     bindsym $mod+Right focus right
 
     # Move the focused window with the same, but add Shift
-    bindsym $mod+Shift+$left move left
-    bindsym $mod+Shift+$down move down
-    bindsym $mod+Shift+$up move up
-    bindsym $mod+Shift+$right move right
+    # bindsym $mod+Shift+$left move left
+    # bindsym $mod+Shift+$down move down
+    # bindsym $mod+Shift+$up move up
+    # bindsym $mod+Shift+$right move right
     # Ditto, with arrow keys
     bindsym $mod+Shift+Left move left
     bindsym $mod+Shift+Down move down
@@ -185,10 +187,10 @@ mode "resize" {
     # right will grow the containers width
     # up will shrink the containers height
     # down will grow the containers height
-    bindsym $left resize shrink width 10px
-    bindsym $down resize grow height 10px
-    bindsym $up resize shrink height 10px
-    bindsym $right resize grow width 10px
+    # bindsym $left resize shrink width 10px
+    # bindsym $down resize grow height 10px
+    # bindsym $up resize shrink height 10px
+    # bindsym $right resize grow width 10px
 
     # Ditto, with arrow keys
     bindsym Left resize shrink width 10px
@@ -264,7 +266,8 @@ exec nm-applet --indicator
 exec firewall-applet
 exec deluge-gtk
 exec blueman-applet
-exec wlsunset -S 8:00 -s 22:00 -t 2500 -T 6500
+# exec wlsunset -S 8:00 -s 22:00 -t 2500 -T 6500
+exec gammastep-indicator
 # exec gnome-keyring-daemon --start --components=secrets
 # exec /usr/lib/polkit-kde-authentication-agent-1
 # arch
@@ -274,8 +277,7 @@ exec /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
 # exec dbus-update-activation-environment --all
 # exec systemctl --user import-environment
 exec dbus-update-activation-environment --systemd --all
-exec sh -c 'cliphist wipe && cliphist compact'
-exec wl-paste --watch cliphist store
+exec sh -c 'cliphist wipe; cliphist compact; wl-paste --watch cliphist store'
 # exec kanshi
 # exec_always kanshictl reload
 exec_always sh -c 'pkill -x kanshi; exec kanshi'
@@ -299,12 +301,12 @@ hide_edge_borders both
 workspace_auto_back_and_forth no
 focus_wrapping no
 
-for_window [class="Microsoft-edge"] move container to workspace number 1
-for_window [app_id="firefox"] move container to workspace number 1
-for_window [app_id="zed"] move container to workspace number 2
+# for_window [class="Microsoft-edge"] move container to workspace number 1
+# for_window [app_id="firefox"] move container to workspace number 1
+# for_window [app_id="zed"] move container to workspace number 2
 for_window [app_id="adhd"] floating enable; fullscreen enable
-for_window [app_id="org.pulseaudio.pavucontrol"] floating enable
-for_window [app_id="pavucontrol"] floating enable
+# for_window [app_id="org.pulseaudio.pavucontrol"] floating enable
+# for_window [app_id="pavucontrol"] floating enable
 
 bindsym $mod+Shift+t exec ${HOME}/.local/bin/swaytiles menu --launcher fuzzel
 bindsym $mod+m exec ${HOME}/.local/bin/swaytiles swap
@@ -315,36 +317,42 @@ bindsym $mod+Shift+Return exec pcmanfm
 bindsym Print exec grim - | tee "$HOME/Pictures/Screenshots/grim-$(date +%Y-%m-%dT%H-%M-%S-%s).png" | wl-copy
 bindsym $mod+Print exec grim -g "$(slurp)" - | swappy -f -
 bindsym $mod+Shift+Print exec sleep 5 && grim - | swappy -f -
-bindsym $mod+Shift+D exec cliphist list | fuzzel --dmenu | cliphist decode | wl-copy
+# bindsym $mod+Shift+D exec cliphist list | fuzzel --dmenu | cliphist decode | wl-copy
+bindsym $mod+h exec cliphist list | fuzzel --dmenu | cliphist decode | wl-copy
 # bindsym $mod+Shift+Return exec thunar
-# bindsym $mod+q kill
+bindsym $mod+q kill
+bindsym $mod+Shift+e exec ~/.config/niri/leave.sh
+bindsym $mod+Ctrl+Left mark --add "_swap", focus left, swap container with mark "_swap", focus left, unmark "_swap"
+bindsym $mod+Ctrl+Right mark --add "_swap", focus right, swap container with mark "_swap", focus right, unmark "_swap"
+bindsym $mod+Ctrl+Up mark --add "_swap", focus up, swap container with mark "_swap", focus up, unmark "_swap"
+bindsym $mod+Ctrl+Down mark --add "_swap", focus down, swap container with mark "_swap", focus down, unmark "_swap"
 # bindsym $mod+t exec wlapse
-bindsym $mod+Shift+e exec swaynag \
-    -y overlay \
-    --font 'Lilex Nerd Font 11' \
-    --background 000000c0 \
-    --border 808080 \
-    --border-bottom 808080 \
-    --button-background 000000c0 \
-    --text ffffff \
-    --button-text ffffff \
-    --border-bottom-size 2 \
-    --message-padding 5 \
-    --details-border-size 0 \
-    --details-background ffffff \
-    --button-border-size 2 \
-    --button-gap 0 \
-    --button-dismiss-gap 50 \
-    --button-margin-right 1 \
-    --button-padding 5 \
-    -m 'logout...' \
-    -Z 'lock' 'swaylock -f -c 202020' \
-    -Z 'suspend' 'systemctl suspend' \
-    -Z 'hybrid-sleep' 'systemctl hybrid-sleep' \
-    -Z 'hibernate' 'systemctl hibernate' \
-    -Z 'exit' 'swaymsg exit' \
-    -Z 'poweroff' 'systemctl poweroff' \
-    -Z 'reboot' 'systemctl reboot'
+# bindsym $mod+Shift+e exec swaynag \
+#     -y overlay \
+#     --font 'Lilex Nerd Font 11' \
+#     --background 000000c0 \
+#     --border 808080 \
+#     --border-bottom 808080 \
+#     --button-background 000000c0 \
+#     --text ffffff \
+#     --button-text ffffff \
+#     --border-bottom-size 2 \
+#     --message-padding 5 \
+#     --details-border-size 0 \
+#     --details-background ffffff \
+#     --button-border-size 2 \
+#     --button-gap 0 \
+#     --button-dismiss-gap 50 \
+#     --button-margin-right 1 \
+#     --button-padding 5 \
+#     -m 'logout...' \
+#     -Z 'lock' 'swaylock -f -c 202020' \
+#     -Z 'suspend' 'systemctl suspend' \
+#     -Z 'hybrid-sleep' 'systemctl hybrid-sleep' \
+#     -Z 'hibernate' 'systemctl hibernate' \
+#     -Z 'exit' 'swaymsg exit' \
+#     -Z 'poweroff' 'systemctl poweroff' \
+#     -Z 'reboot' 'systemctl reboot'
 
 #                       brd       bg          txt        ind          chldbrd
 # client.focused          #4c7899   #285577     #ffffff    #2e9ef4      #285577

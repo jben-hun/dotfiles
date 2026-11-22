@@ -167,6 +167,7 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 
     # Move focus to the parent container
     bindsym $mod+a focus parent
+    bindsym $mod+Shift+a focus child
 #
 # Scratchpad:
 #
@@ -197,6 +198,10 @@ mode "resize" {
     bindsym Down resize grow height 10px
     bindsym Up resize shrink height 10px
     bindsym Right resize grow width 10px
+
+    bindsym 1 resize set width 35 ppt; mode "default"
+    bindsym 2 resize set width 50 ppt; mode "default"
+    bindsym 3 resize set width 65 ppt; mode "default"
 
     # Return to default mode
     bindsym Return mode "default"
@@ -314,9 +319,23 @@ bindsym $mod+m exec ${HOME}/.local/bin/swaytiles swap
 # bindsym $mod+Shift+Return exec foot bash -ic sudomc
 bindsym $mod+Return exec alacritty
 bindsym $mod+Shift+Return exec pcmanfm
-bindsym Print exec grim - | tee "$HOME/Pictures/Screenshots/grim-$(date +%Y-%m-%dT%H-%M-%S-%s).png" | wl-copy
-bindsym $mod+Print exec grim -g "$(slurp)" - | swappy -f -
-bindsym $mod+Shift+Print exec sleep 5 && grim - | swappy -f -
+# bindsym Print exec grim - | tee "$HOME/Pictures/Screenshots/grim-$(date +%Y-%m-%dT%H-%M-%S-%s).png" | wl-copy
+# bindsym $mod+Print exec grim -g "$(slurp)" - | swappy -f -
+# bindsym $mod+Shift+Print exec sleep 5 && grim - | swappy -f -
+bindsym $mod+Print exec grim - | tee "$HOME/Pictures/Screenshots/$(date +%Y-%m-%dT%H-%M-%S-%s).png" | wl-copy
+bindsym $mod+Ctrl+Print exec sleep 5 && grim - | tee "$HOME/Pictures/Screenshots/$(date +%Y-%m-%dT%H-%M-%S-%s).png" | wl-copy
+bindsym $mod+Shift+Print exec grim -t ppm - | satty -f - \
+    --fullscreen \
+    --font-family 'Lilex Nerd Font' \
+    --disable-notifications \
+    --copy-command wl-copy \
+    -o ~/Pictures/Screenshots/%Y-%m-%dT%H-%M-%S-%s.png
+bindsym $mod+Ctrl+Shift+Print exec sleep 5 && grim -t ppm - | satty -f - \
+    --fullscreen \
+    --font-family 'Lilex Nerd Font' \
+    --disable-notifications \
+    --copy-command wl-copy \
+    -o ~/Pictures/Screenshots/%Y-%m-%dT%H-%M-%S-%s.png
 # bindsym $mod+Shift+D exec cliphist list | fuzzel --dmenu | cliphist decode | wl-copy
 bindsym $mod+h exec cliphist list | fuzzel --dmenu | cliphist decode | wl-copy
 # bindsym $mod+Shift+Return exec thunar

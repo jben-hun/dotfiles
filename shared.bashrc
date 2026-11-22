@@ -75,9 +75,14 @@ adhd() {
     } >> "$log"
 }
 
-alias ls='ls -h --color=auto'
-alias l=' ls -l'
-alias ll='l -a'
+# alias ls='ls -h --color=auto'
+# alias l=' ls -l'
+# alias ll='l -a'
+
+alias l='lsd -l'
+alias la='lsd -a'
+alias lla='lsd -la'
+alias lt='lsd --tree'
 
 alias grep='grep --color=auto'
 PS1='[\u@\h \W]\$ '
@@ -94,7 +99,8 @@ export TERMINAL=foot
 export EDITOR=nano
 export VISUAL=nano
 
-export HISTCONTROL=ignoredups:erasedups:ignorespace
+# export HISTCONTROL=ignoredups:erasedups:ignorespace
+export HISTCONTROL=ignoredups:erasedups
 shopt -s histappend
 # export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 export HISTSIZE=50000

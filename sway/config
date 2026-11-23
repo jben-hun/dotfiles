@@ -199,9 +199,9 @@ mode "resize" {
     bindsym Up resize shrink height 10px
     bindsym Right resize grow width 10px
 
-    bindsym 1 resize set width 35 ppt; mode "default"
-    bindsym 2 resize set width 50 ppt; mode "default"
-    bindsym 3 resize set width 65 ppt; mode "default"
+    # bindsym 1 resize set width 35 ppt; mode "default"
+    # bindsym 2 resize set width 50 ppt; mode "default"
+    # bindsym 3 resize set width 65 ppt; mode "default"
 
     # Return to default mode
     bindsym Return mode "default"
@@ -302,9 +302,11 @@ default_floating_border normal 6
 # for_window [floating] border normal 8
 # smart_borders on
 # smart_gaps on
-hide_edge_borders both
+hide_edge_borders --i3 both
+workspace_layout tabbed
+
 workspace_auto_back_and_forth no
-focus_wrapping no
+focus_wrapping yes
 
 # for_window [class="Microsoft-edge"] move container to workspace number 1
 # for_window [app_id="firefox"] move container to workspace number 1
@@ -340,7 +342,7 @@ bindsym $mod+Ctrl+Shift+Print exec sleep 5 && grim -t ppm - | satty -f - \
 bindsym $mod+h exec cliphist list | fuzzel --dmenu | cliphist decode | wl-copy
 # bindsym $mod+Shift+Return exec thunar
 bindsym $mod+q kill
-bindsym $mod+Shift+e exec ~/.config/niri/leave.sh
+bindsym $mod+Shift+e exec ~/.config/sway/leave.sh
 bindsym $mod+Ctrl+Left mark --add "_swap", focus left, swap container with mark "_swap", focus left, unmark "_swap"
 bindsym $mod+Ctrl+Right mark --add "_swap", focus right, swap container with mark "_swap", focus right, unmark "_swap"
 bindsym $mod+Ctrl+Up mark --add "_swap", focus up, swap container with mark "_swap", focus up, unmark "_swap"

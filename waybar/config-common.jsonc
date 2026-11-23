@@ -3,7 +3,7 @@
   "position": "bottom",
   // "height": 29,
 
-  "modules-right": ["tray", "battery", "pulseaudio", "custom/pomo", "clock"],
+  "modules-right": ["tray", "battery", "pulseaudio", "custom/uair", "clock"],
 
   "tray": {
     "icon-size": 25,
@@ -41,20 +41,20 @@
   //   "signal": 1,
   // },
 
-  // "custom/uair": {
-  //   "exec": "uairctl fetch '{time}'",
-  //   "interval": 1,
-  //   "on-click": "uairctl toggle",
-  //   "on-click-right": "uairctl next",
-  //   "tooltip": false,
-  // },
-
-  "custom/pomo": {
-    "exec": "$HOME/shared-bin/pomo",
+  "custom/uair": {
+    "exec": "uairctl fetch '{time}'",
     "interval": 1,
-    "on-click": "$HOME/shared-bin/pomo toggle",
+    "on-click": "uairctl toggle",
+    "on-click-right": "uairctl next",
     "tooltip": false,
   },
+
+  // "custom/pomo": {
+  //   "exec": "$HOME/shared-bin/pomo",
+  //   "interval": 1,
+  //   "on-click": "$HOME/shared-bin/pomo toggle",
+  //   "tooltip": false,
+  // },
 
   "clock": {
     "interval": 1,

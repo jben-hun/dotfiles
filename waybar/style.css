@@ -9,6 +9,7 @@ window#waybar {
 #battery,
 #pulseaudio,
 #custom-pomo,
+#custom-uair,
 #workspaces,
 #clock {
     padding-left: 16px;
@@ -22,7 +23,8 @@ window#waybar {
     color: #ffffff;
 }
 
-#custom-pomo {
+#custom-pomo,
+#custom-uair {
     color: #ffffff;
 }
 

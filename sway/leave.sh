@@ -1,10 +1,10 @@
 #!/usr/bin/env sh
 
+# --prompt='logout... > '
 chosen=$(printf "lock\nsuspend\nhybrid-sleep\nhibernate\nexit\nreboot\npoweroff" | \
     fuzzel --dmenu \
-           --prompt='logout... > ' \
            --lines=7 \
-           --width=22)
+           --width=13)
 
 case "$chosen" in
     "lock")         swaylock -f -c 202020 ;;

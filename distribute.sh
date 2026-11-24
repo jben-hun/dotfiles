@@ -62,8 +62,8 @@ rm -rf ~/.config/gammastep
 cp -r gammastep ~/.config
 
 # uair
-# rm -rf ~/.config/uair
-# cp -r uair ~/.config
+rm -rf ~/.config/uair
+cp -r uair ~/.config
 
 # rofi
 # rm -rf ~/.config/rofi

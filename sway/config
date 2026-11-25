@@ -309,6 +309,11 @@ workspace_layout tabbed
 workspace_auto_back_and_forth no
 focus_wrapping yes
 
+font pango:Lilex Nerd Font Mono 11
+# title_align center
+# for_window [title=".*"] title_format "<b>%app_id</b>: %title"
+titlebar_padding 7 3
+
 # for_window [class="Microsoft-edge"] move container to workspace number 1
 # for_window [app_id="firefox"] move container to workspace number 1
 # for_window [app_id="zed"] move container to workspace number 2

@@ -1,5 +1,8 @@
 #!/usr/bin/env sh
 
+# firefox
+cp ~/.firefox-user.js firefox-user.js
+
 # bash
 cp ~/.shared.bashrc shared.bashrc
 

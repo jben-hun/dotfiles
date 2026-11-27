@@ -65,12 +65,11 @@
   },
   "agent": {
     "threads_sidebar": {
-      "auto_open": false
+      "auto_open": false,
     },
     "sandbox_permissions": {
       "allow_all_hosts": true,
-      "network_hosts": [
-      ],
+      "network_hosts": [],
     },
     "tool_permissions": {
       "tools": {
@@ -114,8 +113,8 @@
   },
   "agent_servers": {
     "github-copilot-cli": {
-      "type": "registry"
-    }
+      "type": "registry",
+    },
   },
   "base_keymap": "Zed",
   "icon_theme": {
@@ -136,5 +135,5 @@
     },
   },
   "window_decorations": "server",
-  "restore_on_startup": "launchpad"
+  "restore_on_startup": "launchpad",
 }

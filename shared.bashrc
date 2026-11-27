@@ -12,8 +12,6 @@
 # - command = ["fuzzel", "--dmenu", "--index", "--width", "45", "--lines", str(count), "--line-height", "40", "--prompt", "layout: "]
 # + command = ["fuzzel", "--dmenu", "--index", "--width", "65", "--lines", str(count), "--line-height", "40", "--prompt", "layout: "]
 
-# ln -s  ~/.firefox-user.js ~/.mozilla/firefox/<profile>/user.js
-
 export PATH="$PATH:$HOME/bin:$HOME/shared-bin"
 
 eval "$(zoxide init bash)"

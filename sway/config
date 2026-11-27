@@ -289,6 +289,7 @@ exec sh -c 'cliphist wipe; cliphist compact; wl-paste --watch cliphist store'
 exec_always sh -c 'pkill -x kanshi; exec kanshi'
 exec udiskie --tray
 exec uair -q
+exec aw-qt
 
 set $menu fuzzel
 

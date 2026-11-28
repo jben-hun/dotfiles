@@ -233,6 +233,9 @@ user_pref("browser.formfill.enable", true);
 user_pref("browser.tabs.tabClipWidth", 999999999);
 user_pref("toolkit.tabbox.switchByScrolling", true);
 user_pref("browser.uidensity", 1);
+user_pref("browser.newtabpage.enabled", false);
+user_pref("browser.startup.page", 0);
+user_pref("browser.startup.homepage", "about:blank");
 
 /****************************************************************************
  * END: BETTERFOX                                                           *

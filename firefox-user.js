@@ -215,12 +215,12 @@ user_pref("findbar.highlightAll", true);
 // Enter your personal overrides below this line:
 
 // PREF: delete all browsing data on shutdown
-// user_pref("privacy.sanitize.sanitizeOnShutdown", true);
+user_pref("privacy.sanitize.sanitizeOnShutdown", true);
 user_pref("privacy.clearOnShutdown_v2.cache", true);
 // user_pref("privacy.clearOnShutdown_v2.cookiesAndStorage", true);
 user_pref("privacy.clearOnShutdown_v2.browsingHistoryAndDownloads", true);
 user_pref("privacy.clearOnShutdown_v2.downloads", true); // [HIDDEN]
-// user_pref("privacy.clearOnShutdown_v2.formdata", true);
+user_pref("privacy.clearOnShutdown_v2.formdata", true);
 
 // PREF: after crashes or restarts, do not save extra session data
 // such as form content, scrollbar positions, and POST data
@@ -236,6 +236,7 @@ user_pref("browser.uidensity", 1);
 user_pref("browser.newtabpage.enabled", false);
 user_pref("browser.startup.page", 0);
 user_pref("browser.startup.homepage", "about:blank");
+user_pref("browser.tabs.groups.enabled", false);
 
 /****************************************************************************
  * END: BETTERFOX                                                           *
